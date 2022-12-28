@@ -1,0 +1,16 @@
+[21-May-2021 16:16:07 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/recharge/public_html/dashboard/includes/function.php on line 2
+[27-May-2021 21:28:15 Asia/Kolkata] PHP Notice:  Undefined index: l_name in /home/recharge/public_html/handler/signup.php on line 18
+[27-May-2021 21:28:15 Asia/Kolkata] PHP Notice:  Undefined index: city in /home/recharge/public_html/handler/signup.php on line 22
+[27-May-2021 21:28:15 Asia/Kolkata] PHP Notice:  Undefined index: state in /home/recharge/public_html/handler/signup.php on line 23
+[27-May-2021 21:28:15 Asia/Kolkata] PHP Notice:  Undefined variable: camount in /home/recharge/public_html/handler/signup.php on line 36
+[27-May-2021 21:28:15 Asia/Kolkata] PHP Notice:  Undefined variable: apiaccess in /home/recharge/public_html/handler/signup.php on line 36
+[27-May-2021 21:28:15 Asia/Kolkata] PHP Notice:  Undefined variable: error in /home/recharge/public_html/dashboard/includes/function.php on line 20
+[27-May-2021 21:29:30 Asia/Kolkata] PHP Notice:  Undefined index: l_name in /home/recharge/public_html/handler/signup.php on line 18
+[27-May-2021 21:29:30 Asia/Kolkata] PHP Notice:  Undefined index: city in /home/recharge/public_html/handler/signup.php on line 22
+[27-May-2021 21:29:30 Asia/Kolkata] PHP Notice:  Undefined index: state in /home/recharge/public_html/handler/signup.php on line 23
+[27-May-2021 21:29:58 Asia/Kolkata] PHP Notice:  Undefined index: l_name in /home/recharge/public_html/handler/signup.php on line 18
+[27-May-2021 21:29:58 Asia/Kolkata] PHP Notice:  Undefined index: city in /home/recharge/public_html/handler/signup.php on line 22
+[27-May-2021 21:29:58 Asia/Kolkata] PHP Notice:  Undefined index: state in /home/recharge/public_html/handler/signup.php on line 23
+[27-May-2021 21:29:58 Asia/Kolkata] PHP Notice:  Undefined variable: camount in /home/recharge/public_html/handler/signup.php on line 36
+[27-May-2021 21:29:58 Asia/Kolkata] PHP Notice:  Undefined variable: apiaccess in /home/recharge/public_html/handler/signup.php on line 36
+[27-May-2021 21:29:58 Asia/Kolkata] PHP Notice:  Undefined variable: error in /home/recharge/public_html/dashboard/includes/function.php on line 20
