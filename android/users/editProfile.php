@@ -11,7 +11,7 @@
     $pass_hash = md5($password);
     $check = "Unclear";
 
-    $details = $con->query("select * from `masterdistributer` where MOBILE='9731415095' and PASSWORD='b2fe7b1b2666db3112bfa165c22985f9'")->fetch_assoc();
+    $details = $con->query("select * from `masterdistributer` where `MOBILE`='$mobile' and `PASSWORD`='$pass_hash'")->fetch_assoc();
     $old_email = $details['EMAIL'];
 
 if($table=="admin"){
