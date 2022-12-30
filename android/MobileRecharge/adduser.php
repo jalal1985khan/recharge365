@@ -22,7 +22,7 @@ date_default_timezone_set('Asia/Kolkata');
 	    $byStatus = $myStatus;
 	    $byID = $myID;	    
 	}
-
+// MASTER DISTRIBUTER CODE
 	if($myTable == "MASTERDISTRIBUTOR"){
 		//check for masterdistributer email validation
 		$mdemail = "SELECT * FROM masterdistributer WHERE  EMAIL='$email'";
@@ -43,12 +43,11 @@ date_default_timezone_set('Asia/Kolkata');
 			else {
 			echo 'Something went wrong..';
 				  }
-				  
+
 		 $message1 = "Dear%20User%20Your%20Password%20is%20$password%20from%20www.recharges365.com";
-					 $message2 = "Dear User Your Password is $password from www.recharges365.com";
-						   
-						  sendMessage($mobile,$message1);
-						  sendMail($email,$message2);
+		 $message2 = "Dear User Your Password is $password from www.recharges365.com";
+		 sendMessage($mobile,$message1);
+		 sendMail($email,$message2);
 					  
 		}
 		else{
@@ -65,7 +64,51 @@ date_default_timezone_set('Asia/Kolkata');
 			
 		}		
 		}	
-		// master distributer end here
+// MASTER DISTRIBUTER CODE END HERE
+
+		if($myTable == "RETAILER"){   
+			//check for retailer email validation
+			$retailemail = "SELECT * FROM retailer WHERE  EMAIL='$email'";
+			$RemailCheck = mysqli_fetch_array(mysqli_query($con,$retailemail));
+			
+			//check for retailer email validation
+			$retailmobile = "SELECT * FROM retailer WHERE  MOBILE='$mobile'";
+			$RmobileCheck = mysqli_fetch_array(mysqli_query($con,$retailmobile ));
+				
+			if(!isset($RemailCheck) && !isset($RmobileCheck) ){
+			
+				
+				$Rsql = "INSERT INTO `retailer`(`ID`, `OWNER`, `MS_ID`, `DISTRIBUTER`, `IMAGE`, `FNAME`, `MOBILE`, `MYKYC`, `RCBAL`, `DMRBAL`, `SMSBAL`, `REGDATE`, `CUTTOFFAMOUNT`, `COMM_PACK`, `STATUS`, `APIACCESS`, `EMAIL`, `ADDRESS`, `CITY`, `STATE`, `PASSWORD`)
+				VALUES('','$byStatus','$byID','$byID','default.jpeg','$name','$mobile','NA','0','0','0','$date','0','$packname','Activate','','$email','$address','$city','$state','$pass_hash')";
+				$run = mysqli_query($con , $Rsql );
+				if($run){
+				echo 'User Added';    
+				}
+				else {
+				echo 'Something went wrong..';
+					  }	
+			 $message1 = "Dear%20User%20Your%20Password%20is%20$password%20from%20www.recharges365.com";
+			 $message2 = "Dear User Your Password is $password from www.recharges365.com";
+			sendMessage($mobile,$message1);
+			sendMail($email,$message2);
+						  
+			}
+			else{
+				if(isset($RemailCheck)){
+					echo   "Email already exist";
+					}
+			else if(isset($RmobileCheck)){
+					echo  "Mobile already exist";        
+					}
+			else{
+			echo 'Mobile already existEmail already exist';
+					}
+				
+				
+			}
+				
+			}
+// RETAILER CODE END HERE		
 
 
 
