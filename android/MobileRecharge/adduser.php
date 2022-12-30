@@ -3,7 +3,7 @@
     include("config.php");
     require("RetailerRegisterFunction.php");
     
-        date_default_timezone_set('Asia/Kolkata');
+    date_default_timezone_set('Asia/Kolkata');
     $date = date("Y-m-d");
     $time = date("g:i:s A");
 
@@ -74,7 +74,7 @@
 		    
 		    
 		    
-		    		$sql5 = "SELECT * FROM distributer WHERE  EMAIL='$email'";
+		    $sql5 = "SELECT * FROM distributer WHERE  EMAIL='$email'";
 
 	        $check2 = mysqli_fetch_array(mysqli_query($con,$sql5));
 
@@ -88,18 +88,18 @@
 		else{
 		    
 		    
-		    				$sql6 = "SELECT * FROM masterdistributer WHERE  MOBILE='$mobile'";
+		$sql6 = "SELECT * FROM masterdistributer WHERE  MOBILE='$mobile'";
 		
 		$checkmobile3 = mysqli_fetch_array(mysqli_query($con,$sql6));
 		if(isset($checkmobile3)){
 			
-						$result = "Mobile already exist";
+		$result = "Mobile already exist";
 						
 
 		}
 		else{
 		    
-		    		$sql7 = "SELECT * FROM masterdistributer WHERE  EMAIL='$email'";
+		    $sql7 = "SELECT * FROM masterdistributer WHERE  EMAIL='$email'";
 
 	        $check3 = mysqli_fetch_array(mysqli_query($con,$sql7));
 
@@ -112,7 +112,7 @@
 		
 		else{
 		    
-		    				$sql8 = "SELECT * FROM Api_users WHERE  MOBILE='$mobile'";
+		$sql8 = "SELECT * FROM Api_users WHERE  MOBILE='$mobile'";
 		
 		$checkmobile4 = mysqli_fetch_array(mysqli_query($con,$sql8));
 		if(isset($checkmobile4)){
@@ -157,8 +157,8 @@
 		    
 		    		    		    if($myTable == "MASTERDISTRIBUTOR"){
 		        
-		                	$sql9 = "INSERT INTO `masterdistributer`(`OWNER` ,`ADMIN_ID` , `NAME`, `IMAGE` ,  `MOBILE`, `EMAIL`, `SMSBAL`, `RCBAL`, `DMRBAL`, `COMM`,  `STATUS`, `ADDRESS`, `STATE`, `CITY`, `CUTTOFFAMOUNT`, `PASSWORD` , `REGDATE`,`COMM_PACK`) 
-            	VALUES ('$byStatus' , '$byID' , '$name' , 'default.jpeg' , '$mobile' , '$email', '0', '0', '0',  '0', 'Activate',  '$address', '$state' ,'$city','0' , '$pass_hash' , '$date','$packname') ";     
+		                	$sql9 = "INSERT INTO `masterdistributer`(`ID`,`OWNER` ,`ADMIN_ID` , `IMAGE` , `NAME`,  `MOBILE`, `EMAIL`, `SMSBAL`, `RCBAL`, `DMRBAL`, `COMM`,  `STATUS`, `ADDRESS`, `STATE`, `CITY`, `CUTTOFFAMOUNT`,`COMM_PACK`, `PASSWORD` , `REGDATE`) 
+            	VALUES ('','$byStatus' , '$byID', 'default.jpeg' , '$name'  , '$mobile' , '$email', '0', '0', '0',  '0', 'Activate',  '$address', '$state' ,'$city','0' ,'$packname', '$pass_hash' , '$date') ";     
 		        
 		    }
 		    		    		    if($myTable == "APIUSER"){
