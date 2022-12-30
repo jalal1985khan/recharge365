@@ -15,7 +15,7 @@
     $check = "Unclear";
 
     $details = $con->query("select * from $table where MOBILE='$mobile' and PASSWORD='$pass_hash'")->fetch_assoc();
-    echo $old_email = $details['EMAIL'];
+    $old_email = $details['EMAIL'];
 
 if($table=="admin"){
 $mysql_qry = "SELECT * FROM `admin` WHERE `EMAIL`= '$email'";
