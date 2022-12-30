@@ -1,5 +1,5 @@
 <?php
-$con = new mysqli("localhost","recharge","$8Xz3iQhl0Fslakk","recharge_db");
+$con = new mysqli("localhost","u571935445_andmob","Eo5dSEN6Ow$","u571935445_andmob");
 
 // Check connection
 if ($con -> connect_errno) {
