@@ -94,8 +94,8 @@ require("../includes/function.php");
                                                         <div class="input-group">
                                                             <select name="status"  class="form-control">
                                                                 <option >---- Select Status ----</option>
-                                                                <option <?php echo ($row['STATUS'] == "Activate") ? "selected" : "" ;?> value="activate">Activate</option>
-                                                                <option <?php echo ($row['STATUS'] == "Deactivate") ? "selected" : ""; ?> value="deactivate">Deactivate</option>
+                                                                <option <?php echo ($row['STATUS'] == "Activate") ? "selected" : "" ;?> value="Activate">Activate</option>
+                                                                <option <?php echo ($row['STATUS'] == "Deactivate") ? "selected" : ""; ?> value="Deactivate">Deactivate</option>
                                                             </select>
                                                         </div>
                                                         <span class="messages"></span>
