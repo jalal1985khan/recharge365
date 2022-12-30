@@ -6,13 +6,15 @@
     $state = $_POST['state'];
     $city = $_POST['city'];
     $table = $_POST['table'];
-    $mobile = $_POST['mobile'];
+    //$mobile = $_POST['mobile'];
+    $mobile = '8876512898';
     $password = $_POST['password'];
-    $pass_hash = md5($password);
+    //$pass_hash = md5($password);
+    $pass_hash = '36aba7ac608d9f5dacb81c00c82bc54d';
     $check = "Unclear";
 
     $details = $con->query("select * from `masterdistributer` where `MOBILE`='$mobile' and `PASSWORD`='$pass_hash'")->fetch_assoc();
-    $old_email = $details['EMAIL'];
+    echo $old_email = $details['EMAIL'];
 
 if($table=="admin"){
 $mysql_qry = "SELECT * FROM `admin` WHERE `EMAIL`= '$email'";
