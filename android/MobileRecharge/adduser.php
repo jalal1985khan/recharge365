@@ -45,8 +45,8 @@ date_default_timezone_set('Asia/Kolkata');
 			echo 'Something went wrong..';
 				  }
 
-		 $message1 = "$name%20Your%20Password%20is%20$password%20from%20www.recharges365.com";
-		 $message2 = "$name Your Password is $password from www.recharges365.com";
+		 $message1 = "Dear%20User%20Your%20Password%20is%20$password%20from%20www.recharges365.com";
+		 $message2 = "Dear User Your Password is $password from www.recharges365.com";
 		 SendMessage($mobile,$message1);
 		 sendMail($email,$message2);
 					  
@@ -88,8 +88,8 @@ date_default_timezone_set('Asia/Kolkata');
 				else {
 				echo 'Something went wrong..';
 					  }	
-			 $message1 = "$name%20Your%20Password%20is%20$password%20from%20www.recharges365.com";
-			 $message2 = "$name Your Password is $password from www.recharges365.com";
+			 $message1 = "Dear%20User%20Your%20Password%20is%20$password%20from%20www.recharges365.com";
+			 $message2 = "Dear User Your Password is $password from www.recharges365.com";
 			sendMessage($mobile,$message1);
 			sendMail($email,$message2);
 						  
@@ -131,8 +131,8 @@ if($myTable == "DISTRIBUTOR"){
 	else {
 	echo 'Something went wrong..';
 	  }	
-	 $message1 = "$name%20Your%20Password%20is%20$password%20from%20www.recharges365.com";
-	 $message2 = "$name Your Password is $password from www.recharges365.com";
+	 $message1 = "Dear%20User%20Your%20Password%20is%20$password%20from%20www.recharges365.com";
+	 $message2 = "Dear User Your Password is $password from www.recharges365.com";
 	 sendMessage($mobile,$message1);
 	 sendMail($email,$message2);
 				  
