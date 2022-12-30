@@ -1,7 +1,5 @@
 <?php
-    include("config.php");
-    
-    
+    include("../../includes/config.php");
     $table = $_POST['table'];
     $mobile = $_POST['mobile'];
     $password = $_POST['password'];
@@ -10,19 +8,19 @@
     
     
         if($table=="distributer"){
-            $target_dir = "../../../dashboard/distributer/img/";
+            $target_dir = "../../images/";
         }
         elseif($table=="retailer"){
-            $target_dir = "../../../dashboard/retailer/img/";
+            $target_dir = "../../images/";
         }
         elseif($table=="masterdistributer"){
-        //    $target_dir = "../../../dashboard/masterdistributer/img/";
+            $target_dir = "../../images/";
         }
         elseif($table=="admin"){
-            $target_dir = "../../../dashboard/admin/img/";
+            $target_dir = "../../images/";
         }
         else{
-           $target_dir = "../../../dashboard/apiuser/img/";
+            $target_dir = "../../images/";
         }
 
     
