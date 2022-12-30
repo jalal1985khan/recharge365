@@ -13,12 +13,27 @@
 
     $details = $con->query("select * from `masterdistributer` where MOBILE='9731415095' and PASSWORD='b2fe7b1b2666db3112bfa165c22985f9'")->fetch_assoc();
     $old_email = $details['EMAIL'];
-    echo $old_email;
+
+if($table=="admin"){
+$mysql_qry = "SELECT * FROM `admin` WHERE `EMAIL`= '$email'";
+$result = mysqli_query($con, $mysql_qry);
+$nrows = mysqli_num_rows($result);
+    if($nrows > 0) {
+        echo "Email already Exist";  
+    }
+else {
+$query = "UPDATE `$table` SET `NAME`='$name',`EMAIL`='$email' WHERE `MOBILE` ='$mobile' AND `PASSWORD` ='$pass_hash'";
+if(mysqli_query($con,$query)){
+echo "Update Succeed";
+}
+else
+{
+echo "Failed to update";
+}
+} }
+// ADMIN PROFILE UPDATE END HERE
 
 
-    $res = $con->query("SELECT * FROM masterdistributer order by NAME ASC");
-    echo $res;
-    echo "Update Succeed";
                                     
 
 
