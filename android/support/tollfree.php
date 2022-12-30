@@ -1,10 +1,8 @@
 <?php
 
-    include("config.php");
-    
-    
-            $imgPath ="https://www.recharges365.com/recharge/images/tollfree/";
-            $mysql_qry = "SELECT * FROM `toll_free`";
+    include("../../includes/config.php");
+$imgPath ="https://www.recharges365.com/recharge/images/tollfree/";
+$mysql_qry = "SELECT * FROM `toll_free`";
         $result = mysqli_query($con, $mysql_qry);
         $numbers_of_rows = mysqli_num_rows($result);
         $temp_array = array();
