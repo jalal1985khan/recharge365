@@ -1,42 +1,26 @@
-  <?php
-// mail funtion
+<?php
 function SendMail($email,$message){
-
 $subject = "Password Details";
-
 // mail id to be changed to server mail id
 $headers = 'From: Recharge@recharges365.com' . "\r\n" .
   'Reply-To:  Recharge@recharges365.com' . "\r\n" .
   'X-Mailer: PHP/' . phpversion();
-
-// Send the email
-if ($error == FALSE) {
-  if(mail($email, $subject, $message, $headers)) {
-
-    // echo "<script> alert('The email was sent.')</script>";
-    
-    }
-    else {
-    echo json_encode("The email fail to sent");
-    $error = TRUE;
-    }
-}
+  mail($email, $subject, $message, $headers);
 }
 
 
 // SendMessage("8640000118", "work");
-    function SendMessage($mobile, $message){
-            $curl = curl_init();
-                global $con;
-            date_default_timezone_set('Asia/Kolkata');
-            $date = date("Y-m-d");
-            $time = date("g:i:s A"); 
-          $s_api = $con->query("select * from smsApi where STATUS='Activate'")->fetch_assoc();
-          $s_url = $s_api['APIURL'];
-          $s_snder = $s_api['SENDERNAME'];
-          $s_apikey = $s_api['APIKEY'];
-          
-          $live_url = "$s_url&message=$message&sendername=$s_snder&smstype=TRANS&numbers=$mobile&apikey=$s_apikey";
+function SendMessage($mobile, $message){
+$curl = curl_init();
+global $con;
+date_default_timezone_set('Asia/Kolkata');
+$date = date("Y-m-d");
+$time = date("g:i:s A"); 
+$s_api = $con->query("select * from smsApi where STATUS='Activate'")->fetch_assoc();
+$s_url = $s_api['APIURL'];
+$s_snder = $s_api['SENDERNAME'];
+$s_apikey = $s_api['APIKEY'];
+$live_url = "$s_url&message=$message&sendername=$s_snder&smstype=TRANS&numbers=$mobile&apikey=$s_apikey";
             // set our url with curl_setopt()
             curl_setopt($curl, CURLOPT_URL, $live_url);
             
