@@ -1,30 +1,28 @@
 <?php
-    include("config.php");
-    
-    $id = $_POST['id'];
-    $status = $_POST['status'];
-
-        $mysql_qry = "SELECT * FROM `ofline_req` WHERE OWNERID='".$id."' AND OWNERSTATUS='".$status."' AND APPROVALSTATUS='PENDING'";
-        $result = mysqli_query($con, $mysql_qry);
-        $numbers_of_rows = mysqli_num_rows($result);
-        $temp_array = array();
-        if($numbers_of_rows > 0) {
+include("../../includes/config.php");
+$id = $_POST['id'];
+$status = $_POST['status'];
+$mysql_qry = "SELECT * FROM `ofline_req` WHERE OWNERID='".$id."' AND OWNERSTATUS='".$status."' AND APPROVALSTATUS='PENDING'";
+$result = mysqli_query($con, $mysql_qry);
+$numbers_of_rows = mysqli_num_rows($result);
+$temp_array = array();
+if($numbers_of_rows > 0) {
                     while ($row = mysqli_fetch_assoc($result)){
                             if($row['PERSONSTATUS']=="admin"){
-                             $imgpath = "https://www.recharges365.com/recharge/dashboard/admin/img/";   
+                             $imgpath = "https://rch.hassantravels.in/images/";   
                             }
                             else if($row['PERSONSTATUS']=="masterdistributer"){
-                             $imgpath = "https://www.recharges365.com/recharge/dashboard/masterdistributer/img/";    
+                                $imgpath = "https://rch.hassantravels.in/images/";
                             }
                             else if($row['PERSONSTATUS']=="distributer"){
-                                $imgpath = "https://www.recharges365.com/recharge/dashboard/distributer/img/"; 
+                                $imgpath = "https://rch.hassantravels.in/images/";
                             }
                             else if($row['PERSONSTATUS']=="retailer"){
-                                $imgpath = "https://www.recharges365.com/recharge/dashboard/retailer/img/"; 
+                                $imgpath = "https://rch.hassantravels.in/images/";
                             }
                             
                             else if($row['PERSONSTATUS']=="Api_users"){
-                            $imgpath = "https://www.recharges365.com/recharge/dashboard/apiuser/img/"; 
+                                $imgpath = "https://rch.hassantravels.in/images/";
                             
                             }
                             $table = $row['PERSONSTATUS'];
