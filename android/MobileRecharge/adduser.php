@@ -79,7 +79,7 @@ date_default_timezone_set('Asia/Kolkata');
 			echo 'Something went wrong..';
 				  }
 
-		 $message1 = "$name%20Your%20Password%20is%20$password%20from%20www.recharges365.com";
+		 $message1 = "Dear%20Your%20Password%20is%20$password%20from%20www.recharges365.com";
 		 $message2 = "$name Your Password is $password from www.recharges365.com";
 		 SendMessage($mobile,$message1);
 		 sendMail($email,$message2);
