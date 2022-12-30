@@ -150,12 +150,12 @@ if(isset($_GET['delete']))
                                                                     <td> <?php echo $row['SMSBAL'] ?></td>
                                                                     <td> <?php echo $row['CUTTOFFAMOUNT'] ?></td>
                                                                     <td> <?php echo $row['REGDATE'] ?></td>
-                                                                    <td><a  href="set-rt-package.php?user_id=<?php echo $row['ID'] ?> " class="text-center text-muted" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="fas fa-pen"></i></a></td>
+                                                                    <td><a  href="set-rt-package.php?user_id=<?php echo $row['ID'] ?> " class="text-center btn btn-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="fas fa-pen"></i></a></td>
                                                     <td><a href="retailer.php?id=<?php echo $row['ID'] ?>&status=<?php echo $row['STATUS']?>" ><?php echo ($row['STATUS'] == "Activate") ? "Activate" : "Deactivate" ?></a></td>
                                                     <!-- <td><?php $row['APIACCESS'] ?> </td> -->
                                                     <td>
-                                                        <a href="edit-retailer.php?id=<?php echo $row['ID'] ?>" class="m-r-15 text-muted" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="fas fa-edit"></i></a>
-                                                        <!-- <a onclick="javascript: confirmationDelete($(this));return false;" href="retailer.php?delete&id=<?php echo $row['ID'] ?>" class="text-muted" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="icofont icofont-delete-alt"></i></a> -->
+                                                        <a href="edit-retailer.php?id=<?php echo $row['ID'] ?>" class="m-r-15 btn btn-success" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="fas fa-edit"></i></a>
+                                                        <a onclick="return confirm('Are you sure you want to delete this item?');" href="retailer.php?delete&id=<?php echo $row['ID'] ?>" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fas fa-trash"></i></a>
                                                     </td>
                                                                 </tr>
                                                                 <?php
