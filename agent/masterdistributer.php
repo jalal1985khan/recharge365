@@ -22,7 +22,6 @@ if (isset($_POST['submit'])) {
     $password = mt_rand(100000, 900000);
 
     $message = "Dear%20MasterDistributer%2C%20Your%20Password%20for%20$webname%20is%20$password.%20By%20$weburl";
-
     $message2 = "Dear Master distributor, Your Password for online $webname is $password. By $weburl";
 
     $pas_hash = md5($password);
@@ -130,12 +129,12 @@ if (isset($_GET['delete'])) {
                     <td> <?php echo $row['SMSBAL'] ?></td>
                     <td> <?php echo $row['CUTTOFFAMOUNT'] ?></td>
                     <td> <?php echo $row['REGDATE'] ?></td>
-                    <td><a href="set-package.php?user_id=<?php echo $row['ID'] ?>" class="text-center text-muted" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="fas fa-pen"></i></a></td>
+                    <td><a href="set-package.php?user_id=<?php echo $row['ID'] ?>" class="text-center btn btn-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="fas fa-pen"></i></a></td>
                     <td><a href="masterdistributer.php?id=<?php echo $row['ID'] ?>&status=<?php echo $row['STATUS'] ?>"><?php echo ($row['STATUS'] == "Activate") ? "Activate" : "Deactivate" ?></a></td>
                     <td>
 
-                        <a href="edit-masterdistributer.php?id=<?php echo $row['ID'] ?>" class="m-r-15 text-muted" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="fas fa-edit"></i></a>
-                        <!-- <a onclick="javascript: confirmationDelete($(this));return false;" href="masterdistributer.php?delete&id=<?php echo $row['ID'] ?>" class="text-muted" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fas fa-trash"></i></a> -->
+                        <a href="edit-masterdistributer.php?id=<?php echo $row['ID'] ?>" class="m-r-15 btn btn-success" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="fas fa-edit"></i></a>
+                        <a onclick="return confirm('Are you sure you want to delete this item?');" href="masterdistributer.php?delete&id=<?php echo $row['ID'] ?>" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fas fa-trash"></i></a>
                     </td>
                 </tr>
         <?php
