@@ -40,8 +40,13 @@
                                     while($row1 = $success_q->fetch_assoc()){
                                         $success_amount += $row1['AMOUNT'];
                                     }
-                                  
-                                  echo $success_amount;?></h3>
+                                  if($success_amount==''){
+                                      echo '0';
+                                  }
+                                  else{
+                                    echo $success_amount.'Rs';
+                                  }
+                                  ?></h3>
 
                             <p><?php echo $success ;?>Success</p>
                         </div>
@@ -59,8 +64,13 @@
                              while($row2 = $pending_q->fetch_assoc()){
                                 $pending_amount += $row2['AMOUNT'];
                             }
-                            
-                            echo $pending_amount;
+                            if($pending_amount==''){
+                              echo '0';
+                          }
+                          else{
+                            echo $pending_amount.'Rs';
+                          }
+                        
                             ?></h3>
 
                             <p><?php echo $pending;?>Pending</p>
@@ -79,8 +89,12 @@
                              while($row3 = $fail_q->fetch_assoc()){
                                 $failed_amount += $row3['AMOUNT'];
                              }
-                             
-                            echo $failed_amount;
+                             if($failed_amount==''){
+                              echo '0';
+                          }
+                          else{
+                            echo $failed_amount.'Rs';
+                          }
                             ?></h3>
 
                             <p><?php echo $failed;?> Failed</p>
