@@ -1,6 +1,6 @@
 <?php
  
-include('../includes/config.php');
+include('../../includes/config.php');
  
         $mysql_qry = "SELECT * FROM `customer_supports`";
         $result = mysqli_query($con, $mysql_qry);
