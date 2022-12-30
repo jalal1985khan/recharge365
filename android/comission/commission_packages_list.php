@@ -1,14 +1,13 @@
 <?php
 
-    include("config.php");
+    include("../../includes/config.php");
     $mobile = $_POST['mobile'];
     $password = $_POST['password'];
     $id  =$_POST['id'];
     $status = $_POST['myType'];
     $pass = md5($password);
-
-        
-                        $mysql_qry = "SELECT * FROM `commPackage` WHERE OWNER='".$status."' AND OWNER_ID='".$id."' AND STATUS='"."ACTIVATE"."'";
+ 
+        $mysql_qry = "SELECT * FROM `commPackage` WHERE OWNER='".$status."' AND OWNER_ID='".$id."' AND STATUS='"."ACTIVATE"."'";
         $result = mysqli_query($con, $mysql_qry);
         $numbers_of_rows = mysqli_num_rows($result);
         $temp_array = array();
