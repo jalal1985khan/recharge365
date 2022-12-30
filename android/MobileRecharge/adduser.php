@@ -1,6 +1,6 @@
 <?php
 include("../../includes/config.php");
-// include("../common/sendSMS.php");
+include("../common/sendSMS.php");
 
 
 function SendMessage($mobile, $message){
@@ -79,8 +79,8 @@ date_default_timezone_set('Asia/Kolkata');
 			echo 'Something went wrong..';
 				  }
 
-		 $message1 = "Dear%20User%20Your%20Password%20is%20$password%20from%20www.recharges365.com";
-		 $message2 = "Dear User Your Password is $password from www.recharges365.com";
+		 $message1 = "$name%20Your%20Password%20is%20$password%20from%20www.recharges365.com";
+		 $message2 = "$name Your Password is $password from www.recharges365.com";
 		 SendMessage($mobile,$message1);
 		 sendMail($email,$message2);
 					  
@@ -122,8 +122,8 @@ date_default_timezone_set('Asia/Kolkata');
 				else {
 				echo 'Something went wrong..';
 					  }	
-			 $message1 = "Dear%20User%20Your%20Password%20is%20$password%20from%20www.recharges365.com";
-			 $message2 = "Dear User Your Password is $password from www.recharges365.com";
+			 $message1 = "$name%20Your%20Password%20is%20$password%20from%20www.recharges365.com";
+			 $message2 = "$name Your Password is $password from www.recharges365.com";
 			sendMessage($mobile,$message1);
 			sendMail($email,$message2);
 						  
@@ -144,7 +144,50 @@ date_default_timezone_set('Asia/Kolkata');
 				
 			}
 // RETAILER CODE END HERE		
+if($myTable == "DISTRIBUTOR"){
 
+	//check for DISTRIBUTOR email validation
+	$disemail = "SELECT * FROM distributer WHERE  EMAIL='$email'";
+	$DemailCheck = mysqli_fetch_array(mysqli_query($con,$disemail));
+	
+		
+	//check for DISTRIBUTOR email validation
+	$dismobile = "SELECT * FROM distributer WHERE  MOBILE='$mobile'";
+	$DmobileCheck = mysqli_fetch_array(mysqli_query($con,$dismobile));
+	
+	if(!isset($DemailCheck) && !isset($DmobileCheck) ){
+	$Dsql =	 "INSERT INTO `distributer`(`ID`, `OWNER`, `MS_ID`, `NAME`, `IMAGE`, `MOBILE`, `EMAIL`, `MYKYC`, `SMSBAL`, `RCBAL`, `DMRBAL`, `COMM`, `STATUS`, `ADDRESS`, `STATE`, `CITY`, `CUTTOFFAMOUNT`, `COMM_PACK`, `PASSWORD`, `REGDATE`)
+	VALUES('','$byStatus','$byID','$name','default.jpeg','$mobile','$email','NA','0','0','0','0','Activate','$address','$state','$city','0','$packname','$pass_hash','$date')";
+	$run = mysqli_query($con , $Dsql );
+	if($run){
+	echo 'User Added';    
+	}
+	else {
+	echo 'Something went wrong..';
+	  }	
+	 $message1 = "$name%20Your%20Password%20is%20$password%20from%20www.recharges365.com";
+	 $message2 = "$name Your Password is $password from www.recharges365.com";
+	 sendMessage($mobile,$message1);
+	 sendMail($email,$message2);
+				  
+	
+	}
+	else{
+		if(isset($DemailCheck)){
+		   echo   "Email already exist";
+			}
+		else if(isset($DmobileCheck)){
+				echo  "Mobile already exist";        
+			}
+			else{
+				echo 'Mobile already existEmail already exist';
+			}
+		
+		
+	}
+	
+	}
+// DISTRIBUTER CODE END HERE
 
 
  
