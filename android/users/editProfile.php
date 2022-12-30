@@ -5,13 +5,13 @@
     $address= $_POST['address'];
     $state = $_POST['state'];
     $city = $_POST['city'];
-    //$table = $_POST['table'];
-    $table = 'admin';
-    //$mobile = $_POST['mobile'];
-    $mobile = '8876512898';
+    $table = $_POST['table'];
+    //$table = 'admin';
+    $mobile = $_POST['mobile'];
+    //$mobile = '8876512898';
     $password = $_POST['password'];
-    //$pass_hash = md5($password);
-    $pass_hash = '36aba7ac608d9f5dacb81c00c82bc54d';
+    $pass_hash = md5($password);
+    //$pass_hash = '36aba7ac608d9f5dacb81c00c82bc54d';
     $check = "Unclear";
 
     $details = $con->query("select * from $table where MOBILE='$mobile' and PASSWORD='$pass_hash'")->fetch_assoc();
