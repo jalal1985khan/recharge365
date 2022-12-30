@@ -1,9 +1,9 @@
 <?php
  
- require_once('dbConnect.php');
+include("../../includes/config.php");
  
         // $mobile = "8240193554";
-        $password = "143573";
+        //$password = "143573";
  
     // $mysql_qry = "select * FROM retailer WHERE MOBILE ='$mobile' AND PASSWORD = '$password'";
 
