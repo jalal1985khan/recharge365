@@ -1,6 +1,6 @@
 <?php
 
-    include("config.php");
+    include("../../includes/config.php");
     $mobile = $_POST['mobile'];
     $password = $_POST['password'];
     $pass_hash = md5($password);

@@ -1,6 +1,6 @@
 <?php
     
-    include("config.php");
+    include("../../includes/config.php");
     $rechargeAmount = $_POST['rechargeAmount'];
     $rechargeStatus = $_POST['rechargeStatus'];
     $amountLeft = $_POST['amountLeft'];
