@@ -13,7 +13,7 @@
     $pass_hash = '36aba7ac608d9f5dacb81c00c82bc54d';
     $check = "Unclear";
 
-    $details = $con->query("select * from `masterdistributer` where `MOBILE`='$mobile' and `PASSWORD`='$pass_hash'")->fetch_assoc();
+    $details = $con->query("select * from masterdistributer where MOBILE='$mobile' and PASSWORD='$pass_hash'")->fetch_assoc();
     echo $old_email = $details['EMAIL'];
 
 if($table=="admin"){
