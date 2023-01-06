@@ -18,16 +18,18 @@
         $numbers_of_rows = mysqli_num_rows($result);
         if($numbers_of_rows > 0)
                     {
-                        $details = $con->query("SELECT * FROM 'rc_complaint' WHERE USER_NUMBER='$userMobile' AND TXN_ID='$txnID'")->fetch_assoc();
-                        $personTYPE = $details['USER_TYPE'];
-                        $amount = $details['RC_AMOUNT'];
-                        $comm_amount = $details['COMM_AMOUNT'];
-                        $rc_status = $details['RC_STATUS'];
-                        $rc_status = strtoupper($rc_status);
 
-                        if($statusGiven=="SUCCESS" && $rc_status=="PENDING"){
-                                echo 'SUCCESS';
-                        }
+                        echo 'SUCCESS';
+                        // $details = $con->query("SELECT * FROM 'rc_complaint' WHERE USER_NUMBER='$userMobile' AND TXN_ID='$txnID'")->fetch_assoc();
+                        // $personTYPE = $details['USER_TYPE'];
+                        // $amount = $details['RC_AMOUNT'];
+                        // $comm_amount = $details['COMM_AMOUNT'];
+                        // $rc_status = $details['RC_STATUS'];
+                        // $rc_status = strtoupper($rc_status);
+
+                        // if($statusGiven=="SUCCESS" && $rc_status=="PENDING"){
+                        //         echo 'SUCCESS';
+                        // }
                 
             
                     
