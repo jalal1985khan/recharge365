@@ -45,7 +45,7 @@
                                                                 $userType= $row['PERSON'];
                                                                 $transID =  $row['TRANS_ID'];
                                                                 $date =  $row['DATE'];
-																$time = $row['TIME'];
+															                                	$time = $row['TIME'];
                                                                 $number= $row['NUMBER'];
                                                                 $status = $row['STATUS'];
                                                                 $OP = $row['OP'];
