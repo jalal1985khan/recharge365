@@ -10,7 +10,7 @@
     $pass_hash = md5($password);
     $date = date("Y-m-d");
 
-    if($mobile!=""){
+    if($password!=""){
         echo 'SUCCESS';
      
 
