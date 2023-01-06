@@ -11,12 +11,13 @@
     $date = date("Y-m-d");
 
     if($txnID!=""){
+        echo 'SUCCESS';
         $mysql_qry = "SELECT * FROM `admin` WHERE MOBILE='".$mobile."' AND PASSWORD='".$pass_hash."'";
         $result = mysqli_query($con, $mysql_qry);
         $numbers_of_rows = mysqli_num_rows($result);
         if($numbers_of_rows > 0)
                     {
-echo 'SUCCESS';
+//echo 'SUCCESS';
 
                     }
 
