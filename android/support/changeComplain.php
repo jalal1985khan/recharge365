@@ -22,7 +22,7 @@
     $mn = $_POST['mn'];
     $opID = $_POST['opID'];
     $userType = $_POST['userType'];
-    $userNo = $_POST['userNo'];
+    $userNo = $_POST['userMobile'];
     $commAmount = $_POST['commAmount'];
     $remarks = $_POST['remarks'];
 

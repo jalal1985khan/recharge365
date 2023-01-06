@@ -35,7 +35,7 @@
                 
                 else{
                 
-                    echo "Failed";
+                    echo "FAILED";
                     
                 }
         
