@@ -10,6 +10,18 @@
     $pass_hash = md5($password);
     $date = date("Y-m-d");
 
-    echo 'SUCCESS';
+    if($txnID!=""){
+        $mysql_qry = "SELECT * FROM `admin` WHERE MOBILE='".$mobile."' AND PASSWORD='".$pass_hash."'";
+        $result = mysqli_query($con, $mysql_qry);
+        $numbers_of_rows = mysqli_num_rows($result);
+        if($numbers_of_rows > 0)
+                    {
+echo 'SUCCESS';
+
+                    }
+
+                }
+
+        
 
 ?>
