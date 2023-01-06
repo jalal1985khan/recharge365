@@ -27,10 +27,44 @@ if($txnID!=""){
                     $rc_status = strtoupper($rc_status);
                     if($statusGiven=="SUCCESS" && $rc_status=="FAILED"){
                     $q4 = $con->query("UPDATE `recharge_history` SET `STATUS`='$statusGiven' WHERE TRANS_ID='$txnID'");
-                        
-echo"SUCCESS";
-                    }
+                    if($q4){
+                        $old = $con->query("select * from $personTYPE where MOBILE='$userMobile'")->fetch_assoc();
+                                    $old_bal = $old['RCBAL'];
+                                    $user_id = $old['ID'];
+                                    if($personTYPE=='admin'){
+                                     $owner = "admin";
+                                     $ownerid = "1";
+                                    }
+                                    else if($personTYPE=='Api_users'){
+                                        $owner = "admin";
+                                        $ownerid = "1";
+                                       }
+                                     else if($personTYPE=='masterdistributer'){
+                                        $owner = $old['OWNER'];
+                                        $ownerid = $old['ADMIN_ID'];
+                                       }
+                                       else if($personTYPE=='distributer'){
+                                        $owner = $old['OWNER'];
+                                        $ownerid = $old['MS_ID'];
+                                       }
+                                   else if($personTYPE=='retailer'){
+                                        $owner = $old['OWNER'];
+                                        $ownerid = $old['DISTRIBUTER'];
+                                        if($ownerid==""){
+                                             $ownerid = $old['MS_ID'];
+                                        }
+                                    }
 
+                            $finalBal = $old_bal-$cmmAmount;
+                            $refund = $con->query("UPDATE `$personTYPE` SET `RCBAL`=$finalBal WHERE MOBILE='$userMobile'");
+                            $q5 = $con->query("UPDATE `rc_complaint` SET `COMPLAIN_STATUS`='RESOLVED',`RC_STATUS`='$statusGiven',`$remarks`='RESOLVED' WHERE USER_NUMBER='$userMobile' AND TXN_ID='$txnID'");
+                            $queryX1  = $con->query("INSERT INTO `amount_req`(`PERSON`, `TRANS_ID`, `USER`, `OWNER_ID`, `USER_ID`, `TYPE`, `PAYMENT_MODE`, `AMOUNT`, `FEE`, `STATUS`, `BEFORE_REQ`, `AFTER_REQ`, `TIME`) VALUES ('$owner','$txnID','$personTYPE','$ownerid','$user_id','Debit','Failed to Success','$cmmAmount','0%','Deduction','$old_bal','$finalBal','$date')");
+                            echo "SUCCESS";
+                        
+
+                    }
+                    }
+// SUCCESS FAILED END HERE
 
 
 
