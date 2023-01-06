@@ -6,6 +6,7 @@
     $txnID = $_POST['txnID'];
     $userMobile = $_POST['userMobile'];
     $statusGiven = $_POST['status'];
+    $statusGiven = strtoupper($statusGiven);
     $remarks = $_POST['remarks'];
     $mn = $_POST['mn'];
     $pass_hash = md5($password);
