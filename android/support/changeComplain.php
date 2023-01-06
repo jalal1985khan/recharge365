@@ -31,6 +31,9 @@
                         if($statusGiven=="SUCCESS" && $rc_status=="FAILED"){
                                 echo 'SUCCESS';
                         }
+                        else{
+                            echo 'FAILED';
+                        }
                 
             
                     
