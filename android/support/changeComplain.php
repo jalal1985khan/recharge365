@@ -20,7 +20,7 @@
     $txnID = $_POST['txnID'];
     $operator = $_POST['operator'];
     $mn = $_POST['mn'];
-    $opID = $_POST['opID'];
+    $opID = $_POST['status'];
     $userType = $_POST['userType'];
     $userNo = $_POST['userMobile'];
     $commAmount = $_POST['commAmount'];
