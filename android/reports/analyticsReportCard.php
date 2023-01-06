@@ -10,7 +10,7 @@
                         if($my_status=="admin"){
                                                         
                                                         
-                                                        $q = $con->query("SELECT * FROM recharge_history  ORDER BY TIME ASC");
+                                                        $q = $con->query("SELECT * FROM recharge_history  ORDER BY TIME DESC");
                                                             
                                                             while($row = $q->fetch_assoc()){
 
