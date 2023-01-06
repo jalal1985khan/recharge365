@@ -10,7 +10,7 @@
     $pass_hash = md5($password);
         $date = date("Y-m-d");
     if($txnID!=""){
-                            $mysql_qry = "SELECT * FROM `admin` WHERE MOBILE='".$mobile."' AND PASSWORD='".$pass_hash."'";
+        $mysql_qry = "SELECT * FROM `admin` WHERE MOBILE='".$mobile."' AND PASSWORD='".$pass_hash."'";
         $result = mysqli_query($con, $mysql_qry);
         $numbers_of_rows = mysqli_num_rows($result);
         if($numbers_of_rows > 0)
@@ -22,7 +22,7 @@
                         $comm_amount = $details['COMM_AMOUNT'];
                         $rc_status = $details['RC_STATUS'];
                         $rc_status = strtolower($rc_status);
-                        if($statusGiven=="SUCCESS" && $rc_status=="pending"){
+                        if($statusGiven=="SUCCESS" && $rc_status=="PENDING"){
                             
                              
                     $q4 = $con->query("UPDATE `recharge_history` SET `STATUS`='$statusGiven' WHERE TRANS_ID='$txnID'");
@@ -34,7 +34,7 @@
                     }
                             
                 }
-                    else if($statusGiven=="FAILED" && $rc_status=="pending"){
+                    else if($statusGiven=="FAILED" && $rc_status=="PENDING"){
     
                     $q4 = $con->query("UPDATE `recharge_history` SET `STATUS`='$statusGiven' WHERE TRANS_ID='$txnID'");
                     if($q4){
@@ -81,7 +81,7 @@
                             
                 }
                 
-                    else if($statusGiven=="SUCCESS" && $rc_status=="failed"){
+                    else if($statusGiven=="SUCCESS" && $rc_status=="FAILED"){
                             
                     $q4 = $con->query("UPDATE `recharge_history` SET `STATUS`='$statusGiven' WHERE TRANS_ID='$txnID'");
                     if($q4){
@@ -129,7 +129,7 @@
                             
                 }
                 
-                else if($statusGiven=="PENDING" && $rc_status=="failed"){
+                else if($statusGiven=="PENDING" && $rc_status=="FAILED"){
                             
                     $q4 = $con->query("UPDATE `recharge_history` SET `STATUS`='$statusGiven' WHERE TRANS_ID='$txnID'");
                     if($q4){
