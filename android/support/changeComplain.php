@@ -27,7 +27,7 @@
                         $rc_status = $details['RC_STATUS'];
                         $rc_status = strtoupper($rc_status);
 
-                        if($statusGiven=="SUCCESS" && $rc_status=="PENDING"){
+                        if($statusGiven=="SUCCESS" && $rc_status=="FAILED"){
                                 echo 'SUCCESS';
                         }
                 
