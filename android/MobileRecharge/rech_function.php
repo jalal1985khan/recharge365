@@ -512,7 +512,7 @@ $time = date("g:i:s A");
               else{
                 $query3 = $con->query("INSERT INTO `recharge_history`(`OWNER` , `OWNER_ID`,`PERSON` , `PERSON_ID` ,`NUMBER`, `AMOUNT`, `OPERATOR_ID`, `STATUS`, `TRANS_ID`, `ORDER_ID` ,
                 `API_NAME` ,  `OP` , `DATE`  ,`REMAIN_BAL` , `TRANS_TYPE`,`DEDUCT_BAL` , `TIME`)  VALUES('$owner','$owner_id','$person','$person_id', '$mobile'
-                ,'$amount','$operator_id_r' ,'Failed','$txn_id_r','$txn_id' , '$api_name' , '$op_name' , '$date', '$bal' ,'Failed' , '0' , '$time')");
+                ,'$amount','$operator_id_r' ,'FAILED','$txn_id_r','$txn_id' , '$api_name' , '$op_name' , '$date', '$bal' ,'Failed' , '0' , '$time')");
                 
               array_push($temp_array,array("result"=>$myResult, "id"=>$operator_id_r));
               echo json_encode($temp_array);
@@ -1014,7 +1014,7 @@ $time = date("g:i:s A");
               }else{
                 $query3 = $con->query("INSERT INTO `recharge_history`(`OWNER` , `OWNER_ID`,`PERSON` , `PERSON_ID` ,`NUMBER`, `AMOUNT`, `OPERATOR_ID`, `STATUS`, `TRANS_ID`, `ORDER_ID` ,
                 `API_NAME` ,  `OP` , `DATE`  ,`REMAIN_BAL` , `TRANS_TYPE`,`DEDUCT_BAL` , `TIME`)  VALUES('$owner','$owner_id','$person','$person_id', '$mobile'
-                ,'$amount','$operator_id_r' ,'Failed','$txn_id_r','$txn_id' , '$api_name' , '$op_name' , '$date', '$bal' ,'Failed' , '0' , '$time')");
+                ,'$amount','$operator_id_r' ,'FAILED','$txn_id_r','$txn_id' , '$api_name' , '$op_name' , '$date', '$bal' ,'Failed' , '0' , '$time')");
                 
               array_push($temp_array,array("result"=>"Failed", "id"=>$operator_id_r));
               echo json_encode($temp_array);
@@ -1507,7 +1507,7 @@ $time = date("g:i:s A");
              }else{
                 $query3 = $con->query("INSERT INTO `recharge_history`(`OWNER` , `OWNER_ID`,`PERSON` , `PERSON_ID` ,`NUMBER`, `AMOUNT`, `OPERATOR_ID`, `STATUS`, `TRANS_ID`, `ORDER_ID` ,
                 `API_NAME` ,  `OP` , `DATE`  ,`REMAIN_BAL` , `TRANS_TYPE`,`DEDUCT_BAL` , `TIME`)  VALUES('$owner','$owner_id','$person','$person_id', '$mobile'
-                ,'$amount','$operator_id_r' ,'Failed','$txn_id_r','$txn_id' , '$api_name' , '$op_name' , '$date', '$bal' ,'Failed' , '0' , '$time')");
+                ,'$amount','$operator_id_r' ,'FAILED','$txn_id_r','$txn_id' , '$api_name' , '$op_name' , '$date', '$bal' ,'Failed' , '0' , '$time')");
                 
               array_push($temp_array,array("result"=>"Failed", "id"=>$operator_id_r));
               echo json_encode($temp_array);
@@ -1992,7 +1992,7 @@ $time = date("g:i:s A");
              }else{
                 $query3 = $con->query("INSERT INTO `recharge_history`(`OWNER` , `OWNER_ID`,`PERSON` , `PERSON_ID` ,`NUMBER`, `AMOUNT`, `OPERATOR_ID`, `STATUS`, `TRANS_ID`, `ORDER_ID` ,
                 `API_NAME` ,  `OP` , `DATE`  ,`REMAIN_BAL` , `TRANS_TYPE`,`DEDUCT_BAL` , `TIME`)  VALUES('$owner','$owner_id','$person','$person_id', '$mobile'
-                ,'$amount','$operator_id_r' ,'Failed','$txn_id_r','$txn_id' , '$api_name' , '$op_name' , '$date', '$bal' ,'Failed' , '0' , '$time')");
+                ,'$amount','$operator_id_r' ,'FAILED','$txn_id_r','$txn_id' , '$api_name' , '$op_name' , '$date', '$bal' ,'Failed' , '0' , '$time')");
                 
               array_push($temp_array,array("result"=>'Failed', "id"=>$operator_id_r));
               echo json_encode($temp_array);
@@ -2406,7 +2406,7 @@ $time = date("g:i:s A");
             
     $query3 = $con->query("INSERT INTO `recharge_history`(`OWNER` , `OWNER_ID`,`PERSON` , `PERSON_ID` ,`NUMBER`, `AMOUNT`, `OPERATOR_ID`, `STATUS`, `TRANS_ID`, `ORDER_ID` ,
     `API_NAME` ,  `OP` , `DATE`  ,`REMAIN_BAL` , `TRANS_TYPE`,`DEDUCT_BAL` , `TIME`)  VALUES('$owner','$owner_id','$person','$person_id', '$mobile'
-    ,'$amount','$operator_id_r' ,'Failed','$txn_id_r','$txn_id' , '$api_name' , '$op_name' , '$date', '$bal' ,'Failed' , '0' , '$time')");
+    ,'$amount','$operator_id_r' ,'FAILED','$txn_id_r','$txn_id' , '$api_name' , '$op_name' , '$date', '$bal' ,'Failed' , '0' , '$time')");
               array_push($temp_array,array("result"=>'Failed', "id"=>$operator_id_r));
               echo json_encode($temp_array);
         }
@@ -2807,7 +2807,7 @@ $time = date("g:i:s A");
             
     $query3 = $con->query("INSERT INTO `recharge_history`(`OWNER` , `OWNER_ID`,`PERSON` , `PERSON_ID` ,`NUMBER`, `AMOUNT`, `OPERATOR_ID`, `STATUS`, `TRANS_ID`, `ORDER_ID` ,
     `API_NAME` ,  `OP` , `DATE`  ,`REMAIN_BAL` , `TRANS_TYPE`,`DEDUCT_BAL` , `TIME`)  VALUES('$owner','$owner_id','$person','$person_id', '$mobile'
-    ,'$amount','$operator_id_r' ,'Failed','$txn_id_r','$txn_id' , '$api_name' , '$op_name' , '$date', '$bal' ,'Failed' , '0' , '$time')");
+    ,'$amount','$operator_id_r' ,'FAILED','$txn_id_r','$txn_id' , '$api_name' , '$op_name' , '$date', '$bal' ,'Failed' , '0' , '$time')");
               array_push($temp_array,array("result"=>$myResult, "id"=>$operator_id_r));
               echo json_encode($temp_array);
         }
@@ -3209,7 +3209,7 @@ $time = date("g:i:s A");
             
     $query3 = $con->query("INSERT INTO `recharge_history`(`OWNER` , `OWNER_ID`,`PERSON` , `PERSON_ID` ,`NUMBER`, `AMOUNT`, `OPERATOR_ID`, `STATUS`, `TRANS_ID`, `ORDER_ID` ,
     `API_NAME` ,  `OP` , `DATE`  ,`REMAIN_BAL` , `TRANS_TYPE`,`DEDUCT_BAL` , `TIME`)  VALUES('$owner','$owner_id','$person','$person_id', '$mobile'
-    ,'$amount','$operator_id_r' ,'Failed','$txn_id_r','$txn_id' , '$api_name' , '$op_name' , '$date', '$bal' ,'Failed' , '0' , '$time')");
+    ,'$amount','$operator_id_r' ,'FAILED','$txn_id_r','$txn_id' , '$api_name' , '$op_name' , '$date', '$bal' ,'Failed' , '0' , '$time')");
               array_push($temp_array,array("result"=>'Failed', "id"=>$operator_id_r));
               echo json_encode($temp_array);
         }
@@ -3610,7 +3610,7 @@ $temp_array = array();
             
     $query3 = $con->query("INSERT INTO `recharge_history`(`OWNER` , `OWNER_ID`,`PERSON` , `PERSON_ID` ,`NUMBER`, `AMOUNT`, `OPERATOR_ID`, `STATUS`, `TRANS_ID`, `ORDER_ID` ,
     `API_NAME` ,  `OP` , `DATE`  ,`REMAIN_BAL` , `TRANS_TYPE`,`DEDUCT_BAL` , `TIME`)  VALUES('$owner','$owner_id','$person','$person_id', '$mobile'
-    ,'$amount','$operator_id_r' ,'Failed','$txn_id_r','$txn_id' , '$api_name' , '$op_name' , '$date', '$bal' ,'Failed' , '0' , '$time')");
+    ,'$amount','$operator_id_r' ,'FAILED','$txn_id_r','$txn_id' , '$api_name' , '$op_name' , '$date', '$bal' ,'Failed' , '0' , '$time')");
               array_push($temp_array,array("result"=>'Failed', "id"=>$operator_id_r));
               echo json_encode($temp_array);
         }

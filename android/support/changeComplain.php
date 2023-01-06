@@ -28,7 +28,7 @@ if($txnID!=""){
                     if($statusGiven=="SUCCESS" && $rc_status=="FAILED"){
                     $q4 = $con->query("UPDATE `recharge_history` SET `STATUS`='$statusGiven' WHERE TRANS_ID='$txnID'");
                         
-
+echo"SUCCESS";
                     }
 
 
