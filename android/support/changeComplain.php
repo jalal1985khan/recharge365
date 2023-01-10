@@ -14,11 +14,11 @@
 
 if($txnID==""){
 
-    $mysql_qry = "SELECT * FROM `admin` WHERE MOBILE='".$mobile."' AND PASSWORD='".$pass_hash."'";
-    $result = mysqli_query($con, $mysql_qry);
-    $numbers_of_rows = mysqli_num_rows($result);
-    if($numbers_of_rows > 0)
-                {
+    // $mysql_qry = "SELECT * FROM `admin` WHERE MOBILE='".$mobile."' AND PASSWORD='".$pass_hash."'";
+    // $result = mysqli_query($con, $mysql_qry);
+    // $numbers_of_rows = mysqli_num_rows($result);
+    // if($numbers_of_rows > 0)
+                //{
                     $details = $con->query("SELECT * FROM `rc_complaint` WHERE USER_NUMBER='8876512898' AND TXN_ID='12124'")->fetch_assoc();
                    echo  $personTYPE = $details['USER_TYPE'];
                    echo  $amount = $details['RC_AMOUNT'];
@@ -71,7 +71,7 @@ if($txnID==""){
 
 
 
-                }
+                //}
     
 
 
