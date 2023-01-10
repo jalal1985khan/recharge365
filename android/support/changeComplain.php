@@ -60,7 +60,7 @@ if($txnID==""){
                                     }
 
                             $finalBal = $old_bal-$comm_amount;
-                            $refund = $con->query("UPDATE `$personTYPE` SET `RCBAL`=$finalBal WHERE MOBILE='$userMobile'");
+                           // $refund = $con->query("UPDATE `$personTYPE` SET `RCBAL`=$finalBal WHERE MOBILE='$userMobile'");
                             $q5 = $con->query("UPDATE `rc_complaint` SET `COMPLAIN_STATUS`='RESOLVED',`RC_STATUS`='$statusGiven',`$remarks`='RESOLVED' WHERE USER_NUMBER='8876512898' AND TXN_ID='$txnID'");
                             //$queryX1  = $con->query("INSERT INTO `amount_req`(`PERSON`, `TRANS_ID`, `USER`, `OWNER_ID`, `USER_ID`, `TYPE`, `PAYMENT_MODE`, `AMOUNT`, `FEE`, `STATUS`, `BEFORE_REQ`, `AFTER_REQ`, `TIME`) VALUES ('$owner','$txnID','$personTYPE','$ownerid','$user_id','Debit','Failed to Success','$comm_amount','0%','Deduction','$old_bal','$finalBal','$date')");
                             echo "SUCCESS";
