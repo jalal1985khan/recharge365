@@ -12,6 +12,9 @@
     $pass_hash = md5($password);
     $date = date("Y-m-d");
 
+    $statusGiven ="SUCCESS";
+    $rc_status="FAILED";
+
 if($txnID==""){
 
     // $mysql_qry = "SELECT * FROM `admin` WHERE MOBILE='".$mobile."' AND PASSWORD='".$pass_hash."'";
@@ -20,8 +23,8 @@ if($txnID==""){
     // if($numbers_of_rows > 0)
                 //{
                     $details = $con->query("SELECT * FROM `rc_complaint` WHERE USER_NUMBER='8876512898' AND TXN_ID='12124'")->fetch_assoc();
-                   echo  $personTYPE = $details['USER_TYPE'];
-                   echo  $amount = $details['RC_AMOUNT'];
+                    $personTYPE = $details['USER_TYPE'];
+                    $amount = $details['RC_AMOUNT'];
                     $comm_amount = $details['COMM_AMOUNT'];
                     $rc_status = $details['RC_STATUS'];
                     $rc_status = strtoupper($rc_status);
