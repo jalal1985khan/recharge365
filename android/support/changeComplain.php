@@ -38,7 +38,7 @@ if($txnID!=""){
                     if($statusGiven=="SUCCESS" && $rc_status=="FAILED"){
                     $q4 = $con->query("UPDATE `recharge_history` SET `STATUS`='$statusGiven' WHERE TRANS_ID='$txnID'");
                     if($q4){
-                        $old = $con->query("select * from $personTYPE where MOBILE='$userMobile'")->fetch_assoc();
+                        $old = $con->query("select * from $personTYPE where MOBILE='$mn'")->fetch_assoc();
                                     $old_bal = $old['RCBAL'];
                                     $user_id = $old['ID'];
                                     if($personTYPE=='admin'){
@@ -66,7 +66,7 @@ if($txnID!=""){
                                     }
 
                             $finalBal = $old_bal-$comm_amount;
-                           $refund = $con->query("UPDATE `$personTYPE` SET `RCBAL`=$finalBal WHERE MOBILE='$userMobile'"); 
+                           $refund = $con->query("UPDATE `$personTYPE` SET `RCBAL`=$finalBal WHERE MOBILE='$mn'"); 
                             $q5 = $con->query("UPDATE `rc_complaint` SET `RC_STATUS`='$statusGiven',`REMARK`='$mobile',`COMPLAIN_STATUS`='RESOLVED' WHERE ID='$rc_id' AND TXN_ID='$txnID'");
                             $queryX1  = $con->query("INSERT INTO `amount_req`(`PERSON`, `TRANS_ID`, `USER`, `OWNER_ID`, `USER_ID`, `TYPE`, `PAYMENT_MODE`, `AMOUNT`, `FEE`, `STATUS`, `BEFORE_REQ`, `AFTER_REQ`, `TIME`) VALUES ('$owner','$txnID','$personTYPE','$ownerid','$user_id','Debit','Failed to Success','$comm_amount','0%','Deduction','$old_bal','$finalBal','$date')");
                             echo "SUCCESS";
@@ -88,7 +88,7 @@ if($statusGiven=="FAILED" && $rc_status=="PENDING"){
                         
         $cmmAmount =(float)$amount-(float)$comm_amount;
         
-                $old = $con->query("select * from $personTYPE where MOBILE='$userMobile'")->fetch_assoc();
+                $old = $con->query("select * from $personTYPE where MOBILE='$mn'")->fetch_assoc();
                 $old_bal = $old['RCBAL'];
                 $user_id = $old['ID'];
                 
@@ -118,7 +118,7 @@ if($statusGiven=="FAILED" && $rc_status=="PENDING"){
             }
             
                 $finalBal = $old_bal+$cmmAmount;
-                $refund = $con->query("UPDATE `$personTYPE` SET `RCBAL`=$finalBal WHERE MOBILE='$userMobile'");
+                $refund = $con->query("UPDATE `$personTYPE` SET `RCBAL`=$finalBal WHERE MOBILE='$mn'");
                 //$q5 = $con->query("UPDATE `rc_complaint` SET `COMPLAIN_STATUS`='RESOLVED',`RC_STATUS`='$statusGiven',`REMARK`='$remarks' WHERE USER_NUMBER='$userMobile' AND TXN_ID='$txnID'");
                 $q5 = $con->query("UPDATE `rc_complaint` SET `RC_STATUS`='$statusGiven',`REMARK`='$remarks',`COMPLAIN_STATUS`='RESOLVED' WHERE ID='$rc_id' AND TXN_ID='$txnID'");
                 $queryX1  = $con->query("INSERT INTO `amount_req`(`PERSON`, `TRANS_ID`, `USER`, `OWNER_ID`, `USER_ID`, `TYPE`, `PAYMENT_MODE`, `AMOUNT`, `FEE`, `STATUS`, `BEFORE_REQ`, `AFTER_REQ`, `DATE`) VALUES ('$owner','$txnID','$personTYPE','$ownerid','$user_id','Credit','Pending To Failed','$cmmAmount','0%','Refund','$old_bal','$finalBal','$date')");
@@ -133,7 +133,7 @@ if($statusGiven=="PENDING" && $rc_status=="failed"){
     if($q4){
         $cmmAmount =(float)$amount-(float)$comm_amount;
         
-        $old = $con->query("select * from $personTYPE where MOBILE='$userMobile'")->fetch_assoc();
+        $old = $con->query("select * from $personTYPE where MOBILE='$mn'")->fetch_assoc();
         $old_bal = $old['RCBAL'];
         $user_id = $old['ID'];
         
@@ -163,7 +163,7 @@ if($statusGiven=="PENDING" && $rc_status=="failed"){
     }
 
     $finalBal = $old_bal-$cmmAmount;
-    $refund = $con->query("UPDATE `$personTYPE` SET `RCBAL`=$finalBal WHERE MOBILE='$userMobile'");
+    $refund = $con->query("UPDATE `$personTYPE` SET `RCBAL`=$finalBal WHERE MOBILE='$mn'");
     $q5 = $con->query("UPDATE `rc_complaint` SET `RC_STATUS`='$statusGiven',`REMARK`='$remarks',`COMPLAIN_STATUS`='RESOLVED' WHERE ID='$rc_id' AND TXN_ID='$txnID'");
     $queryX1  = $con->query("INSERT INTO `amount_req`(`PERSON`, `TRANS_ID`, `USER`, `OWNER_ID`, `USER_ID`, `TYPE`, `PAYMENT_MODE`, `AMOUNT`, `FEE`, `STATUS`, `BEFORE_REQ`, `AFTER_REQ`, `TIME`) VALUES ('$owner','$txnID','$personTYPE','$ownerid','$user_id','Debit','Failed to PENDING','$cmmAmount','0%','Deduction','$old_bal','$finalBal','$date')");
     echo "SUCCESS";
