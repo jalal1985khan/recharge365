@@ -14,6 +14,7 @@
 
     $statusGiven ="SUCCESS";
     $rc_status="FAILED";
+   $txnID = '12124';
 
 if($txnID==""){
 
