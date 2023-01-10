@@ -18,6 +18,9 @@
 
 if($txnID!=""){
 
+
+
+
     // $mysql_qry = "SELECT * FROM `admin` WHERE MOBILE='".$mobile."' AND PASSWORD='".$pass_hash."'";
     // $result = mysqli_query($con, $mysql_qry);
     // $numbers_of_rows = mysqli_num_rows($result);
@@ -62,7 +65,7 @@ if($txnID!=""){
                             $finalBal = $old_bal-$comm_amount;
                            // $refund = $con->query("UPDATE `$personTYPE` SET `RCBAL`=$finalBal WHERE MOBILE='$userMobile'");
                             //$q5 = $con->query("UPDATE 'rc_complaint' SET 'COMPLAIN_STATUS'='RESOLVED','RC_STATUS'='$statusGiven','REMARK'='RESOLVED' WHERE  USER_NUMBER='8876512898' AND TXN_ID='$txnID'");
-                            $q5 = $con->query("UPDATE 'rc_complaint' SET 'COMPLAIN_STATUS'='RESOLVED','RC_STATUS'='$statusGiven','REMARK'='RESOLVED' WHERE  USER_NUMBER='8876512898'");
+                            $q5 = $con->query("UPDATE `rc_complaint` SET `ID`='[value-1]',`RC_AMOUNT`='[value-2]',`RC_STATUS`='[value-3]',`AMOUNT_LEFT`='[value-4]',`LOGO`='[value-5]',`DATE_TIME`='[value-6]',`TXN_ID`='[value-7]',`OPERATOR`='[value-8]',`MN`='[value-9]',`OP_ID`='[value-10]',`USER_TYPE`='[value-11]',`USER_NUMBER`='[value-12]',`COMM_AMOUNT`='[value-13]',`REMARK`='[value-14]',`COMPLAIN_STATUS`='[value-15]' WHERE 1");
                             //$queryX1  = $con->query("INSERT INTO `amount_req`(`PERSON`, `TRANS_ID`, `USER`, `OWNER_ID`, `USER_ID`, `TYPE`, `PAYMENT_MODE`, `AMOUNT`, `FEE`, `STATUS`, `BEFORE_REQ`, `AFTER_REQ`, `TIME`) VALUES ('$owner','$txnID','$personTYPE','$ownerid','$user_id','Debit','Failed to Success','$comm_amount','0%','Deduction','$old_bal','$finalBal','$date')");
                             echo "SUCCESS";
 
