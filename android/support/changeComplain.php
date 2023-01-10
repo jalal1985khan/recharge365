@@ -12,10 +12,10 @@
     $pass_hash = md5($password);
     $date = date("Y-m-d");
 
-    $statusGiven ="SUCCESS";
-    $rc_status="FAILED";
-   $txnID = '12124';
-   $userMobile ="8876512898";
+//     $statusGiven ="SUCCESS";
+//     $rc_status="FAILED";
+//    $txnID = '12124';
+//    $userMobile ="8876512898";
 
 if($txnID!=""){
 
