@@ -12,7 +12,7 @@
     $pass_hash = md5($password);
     $date = date("Y-m-d");
 
-if($txnID!=""){
+if($txnID==""){
 
     $mysql_qry = "SELECT * FROM `admin` WHERE MOBILE='".$mobile."' AND PASSWORD='".$pass_hash."'";
     $result = mysqli_query($con, $mysql_qry);
