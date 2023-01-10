@@ -19,9 +19,9 @@ if($txnID!=""){
     $numbers_of_rows = mysqli_num_rows($result);
     if($numbers_of_rows > 0)
                 {
-                    $details = $con->query("SELECT * FROM `rc_complaint` WHERE USER_NUMBER='$userMobile' AND TXN_ID='$txnID'")->fetch_assoc();
-                    $personTYPE = $details['USER_TYPE'];
-                    $amount = $details['RC_AMOUNT'];
+                    $details = $con->query("SELECT * FROM `rc_complaint` WHERE USER_NUMBER='8876512898' AND TXN_ID='12124'")->fetch_assoc();
+                   echo  $personTYPE = $details['USER_TYPE'];
+                   echo  $amount = $details['RC_AMOUNT'];
                     $comm_amount = $details['COMM_AMOUNT'];
                     $rc_status = $details['RC_STATUS'];
                     $rc_status = strtoupper($rc_status);
