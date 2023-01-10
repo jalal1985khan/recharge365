@@ -15,6 +15,7 @@
     $statusGiven ="SUCCESS";
     $rc_status="FAILED";
    $txnID = '12124';
+   $userMobile ="8876512898";
 
 if($txnID!=""){
 
@@ -26,7 +27,7 @@ if($txnID!=""){
     // $numbers_of_rows = mysqli_num_rows($result);
     // if($numbers_of_rows > 0)
                 //{
-                    $details = $con->query("SELECT * FROM `rc_complaint` WHERE USER_NUMBER='8876512898' AND TXN_ID='12124'")->fetch_assoc();
+                    $details = $con->query("SELECT * FROM `rc_complaint` WHERE USER_NUMBER='$userMobile' AND TXN_ID='$txnID'")->fetch_assoc();
                     $personTYPE = $details['USER_TYPE'];
                     $amount = $details['RC_AMOUNT'];
                     $comm_amount = $details['COMM_AMOUNT'];
