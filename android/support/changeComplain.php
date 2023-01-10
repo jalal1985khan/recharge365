@@ -74,10 +74,10 @@ if($txnID!=""){
                     }
 // SUCCESS FAILED END HERE
 if($statusGiven=="SUCCESS" && $rc_status=="PENDING"){
-
 $q4 = $con->query("UPDATE `recharge_history` SET `STATUS`='$statusGiven' WHERE TRANS_ID='$txnID'");
     if($q4){
-        $q5 = $con->query("UPDATE 'rc_complaint' SET 'COMPLAIN_STATUS'='RESOLVED','RC_STATUS'='$statusGiven','REMARK'='$remarks' WHERE ID='$rc_id' AND TXN_ID='$txnID'");
+        $q5 = $con->query("UPDATE `rc_complaint` SET `RC_STATUS`='$statusGiven',`REMARK`='RESOLVED',`COMPLAIN_STATUS`='RESOLVED' WHERE ID='$rc_id' AND TXN_ID='$txnID'");
+        //$q5 = $con->query("UPDATE 'rc_complaint' SET 'COMPLAIN_STATUS'='RESOLVED','RC_STATUS'='$statusGiven','REMARK'='$remarks' WHERE ID='$rc_id' AND TXN_ID='$txnID'");
         echo $statusGiven;
     }
 
