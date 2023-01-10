@@ -19,7 +19,7 @@
 
 if($txnID!=""){
 
-    $q5 = $con->query("UPDATE `rc_complaint` SET `RC_STATUS`='$statusGiven',`REMARK`='$mn',`COMPLAIN_STATUS`='RESOLVED' WHERE TXN_ID='$txnID'");
+    $q5 = $con->query("UPDATE `rc_complaint` SET `RC_STATUS`='$statusGiven',`REMARK`='$userMobile',`COMPLAIN_STATUS`='RESOLVED' WHERE TXN_ID='$txnID'");
     echo "SUCCESS";
 
 //     $mysql_qry = "SELECT * FROM `admin` WHERE MOBILE='".$mobile."' AND PASSWORD='".$pass_hash."'";
