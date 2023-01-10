@@ -22,11 +22,11 @@ if($txnID!=""){
 
 
 
-    // $mysql_qry = "SELECT * FROM `admin` WHERE MOBILE='".$mobile."' AND PASSWORD='".$pass_hash."'";
-    // $result = mysqli_query($con, $mysql_qry);
-    // $numbers_of_rows = mysqli_num_rows($result);
-    // if($numbers_of_rows > 0)
-                //{
+    $mysql_qry = "SELECT * FROM `admin` WHERE MOBILE='".$mobile."' AND PASSWORD='".$pass_hash."'";
+    $result = mysqli_query($con, $mysql_qry);
+    $numbers_of_rows = mysqli_num_rows($result);
+    if($numbers_of_rows > 0)
+                {
                     $details = $con->query("SELECT * FROM `rc_complaint` WHERE USER_NUMBER='$userMobile' AND TXN_ID='$txnID'")->fetch_assoc();
                     $personTYPE = $details['USER_TYPE'];
                     $amount = $details['RC_AMOUNT'];
@@ -65,8 +65,7 @@ if($txnID!=""){
                                     }
 
                             $finalBal = $old_bal-$comm_amount;
-                           // $refund = $con->query("UPDATE `$personTYPE` SET `RCBAL`=$finalBal WHERE MOBILE='$userMobile'");
-                            //$q5 = $con->query("UPDATE 'rc_complaint' SET 'COMPLAIN_STATUS'='RESOLVED','RC_STATUS'='$statusGiven','REMARK'='RESOLVED' WHERE  USER_NUMBER='8876512898' AND TXN_ID='$txnID'");
+                           $refund = $con->query("UPDATE `$personTYPE` SET `RCBAL`=$finalBal WHERE MOBILE='$userMobile'"); 
                             $q5 = $con->query("UPDATE `rc_complaint` SET `RC_STATUS`='$statusGiven',`REMARK`='RESOLVED',`COMPLAIN_STATUS`='RESOLVED' WHERE ID='$rc_id' AND TXN_ID='$txnID'");
                             //$queryX1  = $con->query("INSERT INTO `amount_req`(`PERSON`, `TRANS_ID`, `USER`, `OWNER_ID`, `USER_ID`, `TYPE`, `PAYMENT_MODE`, `AMOUNT`, `FEE`, `STATUS`, `BEFORE_REQ`, `AFTER_REQ`, `TIME`) VALUES ('$owner','$txnID','$personTYPE','$ownerid','$user_id','Debit','Failed to Success','$comm_amount','0%','Deduction','$old_bal','$finalBal','$date')");
                             if($q5){
@@ -84,7 +83,7 @@ if($txnID!=""){
 
 
 
-                //}
+                }
     
 
 
