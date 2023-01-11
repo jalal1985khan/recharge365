@@ -17,6 +17,36 @@ $num = "6289195314";
 
 
 
+$temp_array = array();
+
+  $live_url = "   https://www.mplan.in/api/plans.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=887512898&operator=Airtel";
+  //  $live_url = "https://www.roffer.in/api/roffer.php?token=AWSSGBbj7S7SraIfojH80fAh0RkWSbdZotWFDWNl&offer=roffer&mobile=$num&operator=$op";
+
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL, $live_url); //Using live here
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+  curl_setopt($ch, CURLOPT_HEADER, FALSE);
+  curl_setopt($ch, CURLOPT_POST, TRUE);
+
+  $response = curl_exec($ch);
+  curl_close($ch);
+  $result = json_decode($response);
+  // print_r($response);
+  $status = $result->records;
+
+  foreach ($status as $key => $value) {
+
+    array_push($temp_array, array("Paisa" => $value->rs, "Data" => $value->desc));
+  }
+
+
+  echo json_encode($temp_array);
+
+
+
+
+
+
 // dth_plans($op , $num);
 function dth_plans($op, $num)
 {
