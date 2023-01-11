@@ -9,8 +9,8 @@ include("config.php");
 
 
 $service = "mobile";
-$code = "Jio";
-$number = "6289195314";
+$op = "Jio";
+$num = "6289195314";
 
 
 //dthcsinfo
