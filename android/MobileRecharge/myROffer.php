@@ -15,7 +15,8 @@ $number = $_POST['number'];
 
 //dthcsinfo
 
-
+function roffer($code , $number)
+{
 
 $temp_array = array();
 
@@ -37,7 +38,7 @@ $temp_array = array();
     array_push($temp_array, array("Paisa" => $value->rs, "Data" => $value->desc));
   }
   echo json_encode($temp_array);
-
+}
 
 
 
