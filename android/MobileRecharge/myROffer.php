@@ -3,14 +3,14 @@
     include("config.php");
     
     
-    $service = $_POST['service'];
-    $code = $_POST['code'];
-    $number = $_POST['number'];
+    // $service = $_POST['service'];
+    // $code = $_POST['code'];
+    // $number = $_POST['number'];
 
 
-    // $service = "mobile";
-    // $code = "Jio";
-    // $number = "6289195314";
+    $service = "mobile";
+    $code = "Jio";
+    $number = "6289195314";
     
 
     //dthcsinfo
