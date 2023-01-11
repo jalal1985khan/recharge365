@@ -19,7 +19,7 @@ $num = "8876512898";
 
 $temp_array = array();
 
-  $live_url = "https://www.mplan.in/api/plans.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=9731415095&operator=Airtel";
+  $live_url = "https://www.mplan.in/api/plans.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=8876512898&operator=Airtel";
   
 
   $ch = curl_init();
@@ -31,7 +31,7 @@ $temp_array = array();
   $response = curl_exec($ch);
   curl_close($ch);
   $result = json_decode($response);
-  // print_r($response);
+  print_r($response);
   $status = $result->records;
 
   foreach ($status as $key => $value) {
