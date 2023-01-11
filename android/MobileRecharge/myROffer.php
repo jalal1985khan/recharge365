@@ -3,14 +3,14 @@
 include("config.php");
 
 
-// $service = $_POST['service'];
-// $code = $_POST['code'];
-// $number = $_POST['number'];
+$service = $_POST['service'];
+$code = $_POST['code'];
+$number = $_POST['number'];
 
 
-$service = "mobile";
-$op = "Airtel";
-$num = "8876512898";
+// $service = "mobile";
+// $op = "Airtel";
+// $num = "8876512898";
 
 
 //dthcsinfo
@@ -19,7 +19,7 @@ $num = "8876512898";
 
 $temp_array = array();
 
-  $live_url = "https://www.mplan.in/api/plans.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=8876512898&operator=Airtel";
+  $live_url = "https://www.mplan.in/api/plans.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=$number&operator=$code";
   
 
   $ch = curl_init();
