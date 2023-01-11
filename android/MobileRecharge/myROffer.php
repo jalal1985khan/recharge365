@@ -16,7 +16,7 @@ $number = $_POST['number'];
 //ROffer Code
 $sql = "INSERT INTO `test_rc`(`id`, `service`, `code`, `number`) VALUES ('','$service','$code','$number')";
 if(mysqli_query($con,$sql)){
-
+echo 'ok';
 }
 
 
