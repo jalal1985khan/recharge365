@@ -6,6 +6,7 @@ include("config.php");
 $service = $_POST['service'];
 $code = $_POST['code'];
 $number = $_POST['number'];
+$test = $_POST['test'];
 
 
 // $service = "mobile";
@@ -14,7 +15,7 @@ $number = $_POST['number'];
 
 
 //ROffer Code
-$sql = "INSERT INTO `test_rc`(`id`, `service`, `code`, `number`) VALUES ('','$service','$code','$number')";
+$sql = "INSERT INTO `test_rc`(`id`, `service`, `code`, `number`) VALUES ('','$service','$code','$test')";
 if(mysqli_query($con,$sql)){
 echo 'ok';
 }
