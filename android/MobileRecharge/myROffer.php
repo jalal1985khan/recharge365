@@ -49,7 +49,7 @@ function roffer($op , $num){
 
             $temp_array = array();
             
-            $live_url = "   https://www.mplan.in/api/plans.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=$num&operator=$op";
+            $live_url = "   https://www.mplan.in/api/plans.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=887512898&operator=Airtel";
         //  $live_url = "https://www.roffer.in/api/roffer.php?token=AWSSGBbj7S7SraIfojH80fAh0RkWSbdZotWFDWNl&offer=roffer&mobile=$num&operator=$op";
                 
                $ch = curl_init();
