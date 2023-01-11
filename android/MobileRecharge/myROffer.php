@@ -19,7 +19,7 @@ $num = "8876512898";
 
 $temp_array = array();
 
-  $live_url = "   https://www.mplan.in/api/plans.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=887512898&operator=Airtel";
+  $live_url = "https://www.mplan.in/api/plans.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=887512898&operator=Airtel";
   
 
   $ch = curl_init();
