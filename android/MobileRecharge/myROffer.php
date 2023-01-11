@@ -19,7 +19,7 @@
 
 // dth_plans($op , $num);
 function dth_plans($op , $num){
-    include("config.php");
+
 
             $temp_array = array();
 
@@ -48,8 +48,9 @@ function roffer($op , $num){
     include("config.php");
 
             $temp_array = array();
-
-         $live_url = "https://www.roffer.in/api/roffer.php?token=AWSSGBbj7S7SraIfojH80fAh0RkWSbdZotWFDWNl&offer=roffer&mobile=$num&operator=$op";
+            
+            $live_url = "   https://www.mplan.in/api/plans.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=$num&operator=$op";
+        //  $live_url = "https://www.roffer.in/api/roffer.php?token=AWSSGBbj7S7SraIfojH80fAh0RkWSbdZotWFDWNl&offer=roffer&mobile=$num&operator=$op";
                 
                $ch = curl_init();
       curl_setopt($ch, CURLOPT_URL, $live_url); //Using live here
@@ -211,19 +212,3 @@ if($service=="electbilldate" && $code!=""){
         $r_name = $op['roffer'];
         eloff($r_name , $number);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-?>
