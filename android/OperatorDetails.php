@@ -12,8 +12,8 @@
         if($numbers_of_rows > 0) {
                     while ($row = mysqli_fetch_assoc($result))
             {
-                array_push($temp_array,array("OPERATOR"=>$row["PRODUCTNAME"],"LONGCODE"=>$row["LONGCODE"],"SERVICETYPE"=>$row["SERVICETYPE"],"APICOMPANY"=>$row["APICOMPANY"],"APIPRODUCT"=>$row["APIPRODUCT"],"LOGO"=>$row["LOGO"],"MINRCAMOUNT"=>$row['MINRCAMOUNT'],"MAXRCAMOUNT"=>$row['MAXRCAMOUNT']));
-            }    
+                array_push($temp_array,array("OPERATOR"=>$row["PRODUCTNAME"],"ROFFER"=>$row["roffer"],"LONGCODE"=>$row["LONGCODE"],"SERVICETYPE"=>$row["SERVICETYPE"],"APICOMPANY"=>$row["APICOMPANY"],"APIPRODUCT"=>$row["APIPRODUCT"],"LOGO"=>$row["LOGO"],"MINRCAMOUNT"=>$row['MINRCAMOUNT'],"MAXRCAMOUNT"=>$row['MAXRCAMOUNT']));
+            }       
                 echo json_encode($temp_array);        
             
         }
@@ -21,5 +21,3 @@
                             echo json_encode("NO Operator");        
 
         }
-
-?>
