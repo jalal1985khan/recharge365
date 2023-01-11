@@ -33,13 +33,9 @@ $temp_array = array();
   $result = json_decode($response);
   print_r($response);
   $status = $result->records;
-
   foreach ($status as $key => $value) {
-
     array_push($temp_array, array("Paisa" => $value->rs, "Data" => $value->desc));
   }
-
-
   echo json_encode($temp_array);
 
 
