@@ -18,7 +18,7 @@ if($test =='dthplan')
 {
   $temp_array = array();
   $ch = curl_init();
-  $live_url ="https://www.mplan.in/api/DthRoffer.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=3025231060&operator=AirtelDTH";
+  $live_url ="https://www.mplan.in/api/DthRoffer.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=$number&operator=$plan";
   curl_setopt($ch, CURLOPT_URL, $live_url); //Using live here
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
   $response = curl_exec($ch);
@@ -77,7 +77,7 @@ elseif($test =='prepaid'){
 
 }
 
-$sql = "INSERT INTO `test_rc`(`id`, `service`, `code`, `number`) VALUES ('','$plan','$code','$test')";
+$sql = "INSERT INTO `test_rc`(`id`, `service`, `code`, `number`) VALUES ('','$plan','$number','$test')";
 if(mysqli_query($con,$sql)){
 echo 'ok';
 }
