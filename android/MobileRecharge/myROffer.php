@@ -11,30 +11,6 @@ $test = $_POST['test'];
 // $op = "Airtel";
 // $num = "8876512898";
 
-$temp_array = array();
-  $live_url = "https://www.mplan.in/api/Dthinfo.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=$number&operator=Airteldth";
-  $ch = curl_init();
-  curl_setopt($ch, CURLOPT_URL, $live_url); //Using live here
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-  curl_setopt($ch, CURLOPT_HEADER, FALSE);
-  curl_setopt($ch, CURLOPT_POST, TRUE);
-  $response = curl_exec($ch);
-  curl_close($ch);
-  $result = json_decode($response);
-  $status = $result->records;
-  foreach ($status as $key => $value) {
-    array_push($temp_array, array("Balance" => $value->Balance, "CustomerName" => $value->customerName, "Status" => $value->status, "NextRechargeDate" => $value->NextRechargeDate, "MonthlyRecharge" => $value->MonthlyRecharge, "PlanName" => $value->planname));
-  }
-
-  if (empty($temp_array)) {
-    echo "No Records";
-  } else {
-    echo json_encode($temp_array);
-  }
-
-
-
-
 //ROffer Code
 $sql = "INSERT INTO `test_rc`(`id`, `service`, `code`, `number`) VALUES ('','$service','$code','$test')";
 if(mysqli_query($con,$sql)){
@@ -61,7 +37,7 @@ if($test =='prepaid'){
 
 }
 
-if($service=='dthcsinfo')
+else if($service=='dthcsinfo')
 {
   $temp_array = array();
   $live_url = "https://www.mplan.in/api/Dthinfo.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=$number&operator=Airteldth";
@@ -87,7 +63,7 @@ echo 'no records';
 
 }
 
-if($test=='elect')
+else if($test=='elect')
 {
   $temp_array = array();
   $live_url = "https://www.mplan.in/api/electricinfo.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=$number";
