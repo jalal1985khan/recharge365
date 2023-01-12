@@ -12,7 +12,7 @@ $test = $_POST['test'];
 // $num = "8876512898";
 
 //ROffer Code
-$sql = "INSERT INTO `test_rc`(`id`, `service`, `code`, `number`) VALUES ('','$service','$code','$test')";
+$sql = "INSERT INTO `test_rc`(`id`, `service`, `code`, `number`) VALUES ('','$service','$code','$number')";
 if(mysqli_query($con,$sql)){
 echo 'ok';
 }
