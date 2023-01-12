@@ -2,8 +2,8 @@
  
  require_once('dbConnect.php');
  
-    $op_type = $_POST['op'];
-    // $op_type = "Broadband";
+    //$op_type = $_POST['op'];
+     $op_type = "Mobile";
  
    $mysql_qry = "SELECT * FROM `switchOperator` WHERE SERVICETYPE = '$op_type' and STATUS='Activate'";
     $result = mysqli_query($con, $mysql_qry);
