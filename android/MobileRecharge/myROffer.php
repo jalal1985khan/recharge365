@@ -24,7 +24,7 @@ echo 'ok';
 
 if($test =='prepaid'){
   $temp_array = array();
-  $live_url = "https://www.mplan.in/api/plans.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=$number&operator=$code";
+  $live_url = "https://www.mplan.in/api/plans.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=$number&operator=Airteldth";
   $ch = curl_init();
   curl_setopt($ch, CURLOPT_URL, $live_url); //Using live here
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
