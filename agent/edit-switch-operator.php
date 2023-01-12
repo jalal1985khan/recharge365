@@ -18,7 +18,7 @@ require("../includes/config.php");
      $apiservice = $_POST['apiservice'];
      $apiproduct = $_POST['apiproduct'];
      $roffer = $_POST['roffer'];
-     
+     $plan = $_POST['plan'];
      $ap_code = $_POST['ap_code'];
      
      $p = $con->query("select * from operatorManager where SERVICEAPI='$apiservice' and PRODUCTCODE='$apiproduct'")->fetch_assoc();
@@ -34,7 +34,7 @@ require("../includes/config.php");
      }
      
      
-     $query = "UPDATE `switchOperator` SET `PRODUCTNAME`='$p_name',roffer='$roffer', API_USER_CODE='$ap_code' , MINRCAMOUNT='$minrc', MAXRCAMOUNT='$maxrc', `LONGCODE`='$apiproduct',`SERVICETYPE`='$servicetype',
+     $query = "UPDATE `switchOperator` SET `PRODUCTNAME`='$productname',roffer='$roffer', PLAN='$plan', API_USER_CODE='$ap_code' , MINRCAMOUNT='$minrc', MAXRCAMOUNT='$maxrc', `LONGCODE`='$apiproduct',`SERVICETYPE`='$servicetype',
      `APICOMPANY`='$apiservice', `STATUS`='$status' WHERE ID='$id'";
      		
     $query_run = mysqli_query($con,$query);
@@ -90,7 +90,7 @@ require("../includes/config.php");
 
                                                 ?>
                                                 <div class="form-group row">
-                                                    <div class="col-sm-4">
+                                                    <div class="col-sm-2">
                                                         <label for="">Product Name</label>
                                                         <input type="text" class="form-control"  value="<?php echo $operator['PRODUCTNAME']?>" name="productname">
                                                         <span class="messages"></span>
@@ -103,6 +103,11 @@ require("../includes/config.php");
                                                     <div class="col-sm-2">
                                                         <label for="">R-offer Code</label>
                                                         <input type="text" class="form-control" value="<?php echo $operator['roffer']?>" name="roffer" >
+                                                        <span class="messages"></span>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <label for="">R-offer Code</label>
+                                                        <input type="text" class="form-control" value="<?php echo $operator['PLAN']?>" name="plan" >
                                                         <span class="messages"></span>
                                                     </div>
                                                     <div class="col-sm-4">

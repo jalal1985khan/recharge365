@@ -18,10 +18,11 @@ require("../includes/config.php");
      $img_name = $operatorlogo['name'];
      $status = $_POST['status'];
      $roffer = $_POST['roffer'];
-          $ap_code = $_POST['ap_code'];
+     $plan = $_POST['plan'];
+     $ap_code = $_POST['ap_code'];
 
-     $query = "INSERT INTO `switchOperator`( `PRODUCTNAME`, `LONGCODE` , `SERVICETYPE`, `MINRCAMOUNT` , `MAXRCAMOUNT` , `APICOMPANY` , `APIPRODUCT`, `LOGO` , `STATUS` , `roffer` , `API_USER_CODE`)
-     		VALUES('$productname' , '$apiproduct'  , '$servicetype' , '$minrc' , '$maxrc' , '$apiservice' , '$apiproduct' , '$img_name' , '$status' , '$roffer' , '$ap_code') ";
+     $query = "INSERT INTO `switchOperator`( `PRODUCTNAME`, `LONGCODE` , `SERVICETYPE`, `MINRCAMOUNT` , `MAXRCAMOUNT` , `APICOMPANY` , `APIPRODUCT`, `LOGO` , `STATUS` , `roffer`, `PLAN` , `API_USER_CODE`)
+     		VALUES('$productname' , '$apiproduct'  , '$servicetype' , '$minrc' , '$maxrc' , '$apiservice' , '$apiproduct' , '$img_name' , '$status' , '$roffer', '$plan' , '$ap_code') ";
      		
     $query_run = mysqli_query($con,$query);
     
@@ -100,7 +101,7 @@ $id = $_GET['id'];
                                                     </div>
                                                     <div class="col-sm-2">
                                                         <label for="">Plan Code <small>DTH ROFFER</small></label>
-                                                        <input type="text" class="form-control" name="roffer" required>
+                                                        <input type="text" class="form-control" name="plan" required>
                                                         <span class="messages"></span>
                                                     </div>
                                                     <div class="col-sm-4">
