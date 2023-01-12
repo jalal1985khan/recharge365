@@ -1,10 +1,10 @@
 <?php
 
 include("config.php");
-// $service = $_POST['service'];
-// $code = $_POST['code'];
-// $number = $_POST['number'];
-// $test = $_POST['test'];
+$service = $_POST['service'];
+$code = $_POST['code'];
+$number = $_POST['number'];
+$test = $_POST['test'];
 
 
 // $service = "mobile";
