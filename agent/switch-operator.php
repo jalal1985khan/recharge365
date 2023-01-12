@@ -83,7 +83,7 @@ $id = $_GET['id'];
  <div class="card-body">    
  <form  method="post" action="" enctype="multipart/form-data">
                                                 <div class="form-group row">
-                                                    <div class="col-sm-4">
+                                                    <div class="col-sm-2">
                                                         <label for="">Product Name</label>
                                                         <input type="text" class="form-control" name="productname" required>
                                                         <span class="messages"></span>
