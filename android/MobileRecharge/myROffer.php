@@ -41,7 +41,7 @@ if($test =='prepaid'){
 if($test=='dth')
 {
   $temp_array = array();
-  $live_url = "https://www.mplan.in/api/Dthinfo.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=$number";
+  $live_url = "https://www.mplan.in/api/Dthinfo.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=$number&operator=$code";
   //$live_url = "https://www.mplan.in/api/plans.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=$number&operator=$code";
   $ch = curl_init();
   curl_setopt($ch, CURLOPT_URL, $live_url); //Using live here
@@ -57,6 +57,57 @@ if($test=='dth')
     array_push($temp_array, array("Paisa" => $value->rs, "Data" => $value->desc));
   }
   echo json_encode($temp_array);
+
+
+}
+
+if($test=='elect')
+{
+  $temp_array = array();
+  $live_url = "https://www.mplan.in/api/electricinfo.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=$number";
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL, $live_url); //Using live here
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+  curl_setopt($ch, CURLOPT_HEADER, FALSE);
+  curl_setopt($ch, CURLOPT_POST, TRUE);
+  $response = curl_exec($ch);
+  curl_close($ch);
+  $result = json_decode($response);
+  //print_r($response);
+  $status = $result->records;
+  foreach ($status as $key => $value) {
+    array_push($temp_array, array("Paisa" => $value->rs, "Data" => $value->desc));
+  }
+  echo json_encode($temp_array);
+
+  $temp_array = array();
+  $live_url = "https://www.mplan.in/api/electricinfo.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=$number&&operator=$op";
+  //$live_url = "https://www.roffer.in/api/electricinfo.php?token=AWSSGBbj7S7SraIfojH80fAh0RkWSbdZotWFDWNl&offer=roffer&mobile=$num&operator=$op";
+
+  $ch = curl_init();
+  // echo $live_url;
+  curl_setopt($ch, CURLOPT_URL, $live_url); //Using live here
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+  curl_setopt($ch, CURLOPT_HEADER, FALSE);
+  curl_setopt($ch, CURLOPT_POST, TRUE);
+
+  $response = curl_exec($ch);
+  curl_close($ch);
+  //  print_r($live_url);
+  $result = json_decode($response);
+  $status = $result->records;
+  //   print_r($status);
+  foreach ($status as $key => $value) {
+
+    array_push($temp_array, array("CustomerName" => $value->CustomerName, "BillNumber" => $value->BillNumber, "Billdate" => $value->Billdate, "Billamount" => $value->Billamount, "Duedate" => $value->Duedate));
+  }
+  if (empty($temp_array)) {
+    echo "No Records";
+  } else {
+    echo json_encode($temp_array);
+  }
+
+
 
 
 }
@@ -166,31 +217,7 @@ if($test=='dth')
 
 // function eloff($op, $num)
 // {
-//   $temp_array = array();
-//   $live_url = "https://www.roffer.in/api/electricinfo.php?token=AWSSGBbj7S7SraIfojH80fAh0RkWSbdZotWFDWNl&offer=roffer&mobile=$num&operator=$op";
 
-//   $ch = curl_init();
-//   // echo $live_url;
-//   curl_setopt($ch, CURLOPT_URL, $live_url); //Using live here
-//   curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-//   curl_setopt($ch, CURLOPT_HEADER, FALSE);
-//   curl_setopt($ch, CURLOPT_POST, TRUE);
-
-//   $response = curl_exec($ch);
-//   curl_close($ch);
-//   //  print_r($live_url);
-//   $result = json_decode($response);
-//   $status = $result->records;
-//   //   print_r($status);
-//   foreach ($status as $key => $value) {
-
-//     array_push($temp_array, array("CustomerName" => $value->CustomerName, "BillNumber" => $value->BillNumber, "Billdate" => $value->Billdate, "Billamount" => $value->Billamount, "Duedate" => $value->Duedate));
-//   }
-//   if (empty($temp_array)) {
-//     echo "No Records";
-//   } else {
-//     echo json_encode($temp_array);
-//   }
 //   //   echo $response;
 // }
 
