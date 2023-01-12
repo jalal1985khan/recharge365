@@ -5,6 +5,7 @@ $service = $_POST['service'];
 $code = $_POST['code'];
 $number = $_POST['number'];
 $test = $_POST['test'];
+$plan = $_POST['plan'];
 
 
 // $service = "mobile";
@@ -76,7 +77,7 @@ elseif($test =='prepaid'){
 
 }
 
-$sql = "INSERT INTO `test_rc`(`id`, `service`, `code`, `number`) VALUES ('','$service','$code','$test')";
+$sql = "INSERT INTO `test_rc`(`id`, `service`, `code`, `number`) VALUES ('','$plan','$code','$test')";
 if(mysqli_query($con,$sql)){
 echo 'ok';
 }
