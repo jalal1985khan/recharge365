@@ -62,10 +62,10 @@ elseif($test =='prepaid'){
 
 }
 
-// $sql = "INSERT INTO `test_rc`(`id`, `service`, `code`, `number`) VALUES ('','$service','$code','$test')";
-// if(mysqli_query($con,$sql)){
-// echo 'ok';
-// }
+$sql = "INSERT INTO `test_rc`(`id`, `service`, `code`, `number`) VALUES ('','$service','$code','$test')";
+if(mysqli_query($con,$sql)){
+echo 'ok';
+}
 
 
 // function roffer($code , $number)
