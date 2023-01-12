@@ -16,7 +16,7 @@ $test = $_POST['test'];
 
 
 
-if($service =='dthcsinfo')
+if($test =='dthinfo')
 {
   $temp_array = array();
   $live_url = "https://www.mplan.in/api/Dthinfo.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=$number&operator=$code";
