@@ -23,7 +23,7 @@ curl_setopt($ch, CURLOPT_POST, TRUE);
 $response = curl_exec($ch);
 curl_close($ch);
 $result = json_decode($response);
-print_r($response);
+//print_r($response);
 $status = $result->records;
 foreach ($status as $key => $value) {
   array_push($temp_array, array("Paisa" => $value->rs, "Data" => $value->desc));
