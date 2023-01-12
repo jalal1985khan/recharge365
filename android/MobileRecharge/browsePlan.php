@@ -11,6 +11,10 @@ $test = $_POST['test'];
 // $op = "Airtel";
 // $num = "8876512898";
 
+$sql = "INSERT INTO `test_rc`(`id`, `service`, `code`, `number`) VALUES ('','$service','$code','$number')";
+if(mysqli_query($con,$sql)){
+echo 'ok';
+}
 
 //ROffer Code
 // $sql = "INSERT INTO `test_rc`(`id`, `service`, `code`, `number`) VALUES ('','$service','$code','$test')";
@@ -34,10 +38,7 @@ foreach ($status as $st) {
 echo json_encode($temp_array);
 
 
-$sql = "INSERT INTO `test_rc`(`id`, `service`, `code`, `number`) VALUES ('','$service','$code','$test')";
-if(mysqli_query($con,$sql)){
-echo 'ok';
-}
+
 
 
 // function roffer($code , $number)
