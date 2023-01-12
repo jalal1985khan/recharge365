@@ -18,25 +18,12 @@ $test = $_POST['test'];
 // echo 'ok';
 // }
 
-if($test =='prepaid'){
-  $temp_array = array();
-  $live_url = "https://www.mplan.in/api/plans.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=$number&operator=$code";
-  $ch = curl_init();
-  curl_setopt($ch, CURLOPT_URL, $live_url); //Using live here
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-  curl_setopt($ch, CURLOPT_HEADER, FALSE);
-  curl_setopt($ch, CURLOPT_POST, TRUE);
-  $response = curl_exec($ch);
-  curl_close($ch);
-  $result = json_decode($response);
-  //print_r($response);
-  $status = $result->records;
-  foreach ($status as $key => $value) {
-    array_push($temp_array, array("Paisa" => $value->rs, "Data" => $value->desc));
-  }
-  echo json_encode($temp_array);
 
+$sql = "INSERT INTO `test_rc`(`id`, `service`, `code`, `number`) VALUES ('','$service','$code','$test')";
+if(mysqli_query($con,$sql)){
+echo 'ok';
 }
+
 
 // function roffer($code , $number)
 // {
