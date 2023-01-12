@@ -12,19 +12,7 @@ $test = $_POST['test'];
 // $num = "8876512898";
 
 //ROffer Code
-  $temp_array = array();
-  $ch = curl_init();
-  $live_url ="https://www.mplan.in/api/DthRoffer.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=3025231060&operator=AirtelDTH";
-  curl_setopt($ch, CURLOPT_URL, $live_url); //Using live here
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-  $response = curl_exec($ch);
-  curl_close($ch);
-  $result = json_decode($response);
-  $status = $result->records;
-  foreach ($status as $st) {
-    array_push($temp_array, array("Paisa" => $st->rs, "Data" => $st->desc));
-  }
-  echo json_encode($temp_array);
+
 
 
 
@@ -74,10 +62,10 @@ elseif($test =='prepaid'){
 
 }
 
-$sql = "INSERT INTO `test_rc`(`id`, `service`, `code`, `number`) VALUES ('','$service','$code','$test')";
-if(mysqli_query($con,$sql)){
-echo 'ok';
-}
+// $sql = "INSERT INTO `test_rc`(`id`, `service`, `code`, `number`) VALUES ('','$service','$code','$test')";
+// if(mysqli_query($con,$sql)){
+// echo 'ok';
+// }
 
 
 // function roffer($code , $number)
