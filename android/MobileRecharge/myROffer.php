@@ -13,7 +13,7 @@ $test = $_POST['test'];
 
 //ROffer Code
 
-if($test =='dthinfo')
+if($test =='dthplan')
 {
   $temp_array = array();
   $ch = curl_init();
