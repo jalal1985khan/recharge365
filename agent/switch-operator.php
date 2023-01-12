@@ -98,6 +98,11 @@ $id = $_GET['id'];
                                                         <input type="text" class="form-control" name="roffer" required>
                                                         <span class="messages"></span>
                                                     </div>
+                                                    <div class="col-sm-2">
+                                                        <label for="">R-offer Code</label>
+                                                        <input type="text" class="form-control" name="roffer" required>
+                                                        <span class="messages"></span>
+                                                    </div>
                                                     <div class="col-sm-4">
                                                         <label for="">Service Type</label>
                                                         <div class="input-group">
