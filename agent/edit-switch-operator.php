@@ -106,7 +106,7 @@ require("../includes/config.php");
                                                         <span class="messages"></span>
                                                     </div>
                                                     <div class="col-sm-2">
-                                                        <label for="">R-offer Code</label>
+                                                    <label for="">Plan Code <small>DTH ROFFER</small></label>
                                                         <input type="text" class="form-control" value="<?php echo $operator['PLAN']?>" name="plan" >
                                                         <span class="messages"></span>
                                                     </div>
