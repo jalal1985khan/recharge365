@@ -17,10 +17,10 @@ $test = $_POST['test'];
 
 
 //ROffer Code
-// $sql = "INSERT INTO `test_rc`(`id`, `service`, `code`, `number`) VALUES ('','$service','$code','$test')";
-// if(mysqli_query($con,$sql)){
-// echo 'ok';
-// }
+$sql = "INSERT INTO `test_rc`(`id`, `service`, `code`, `number`) VALUES ('','$service','$code','$test')";
+if(mysqli_query($con,$sql)){
+echo 'ok';
+}
 
 if($test =='prepaid'){
   $temp_array = array();
