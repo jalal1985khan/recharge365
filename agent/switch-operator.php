@@ -99,7 +99,7 @@ $id = $_GET['id'];
                                                         <span class="messages"></span>
                                                     </div>
                                                     <div class="col-sm-2">
-                                                        <label for="">Plan Code</label>
+                                                        <label for="">Plan Code <small>DTH ROFFER</small></label>
                                                         <input type="text" class="form-control" name="roffer" required>
                                                         <span class="messages"></span>
                                                     </div>
