@@ -12,24 +12,31 @@ include("config.php");
 // $num = "8876512898";
 
 
-$temp_array = array();
-$live_url = "https://www.mplan.in/api/Dthinfo.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=3025231060&operator=Airteldth";
-//$live_url = "https://www.mplan.in/api/plans.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=$number&operator=$code";
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $live_url); //Using live here
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-curl_setopt($ch, CURLOPT_HEADER, FALSE);
-curl_setopt($ch, CURLOPT_POST, TRUE);
-$response = curl_exec($ch);
-curl_close($ch);
-$result = json_decode($response);
-//print_r($response);
-$status = $result->records;
-foreach ($status as $key => $value) {
-  array_push($temp_array, array("Paisa" => $value->rs, "Data" => $value->desc));
-}
-echo json_encode($temp_array);
 
+  $temp_array = array();
+
+  $live_url = "https://www.mplan.in/api/Dthinfo.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=3025231060&operator=Airteldth";
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL, $live_url); //Using live here
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+  curl_setopt($ch, CURLOPT_HEADER, FALSE);
+  curl_setopt($ch, CURLOPT_POST, TRUE);
+
+  $response = curl_exec($ch);
+  curl_close($ch);
+
+  $result = json_decode($response);
+  $status = $result->records;
+  foreach ($status as $key => $value) {
+
+    array_push($temp_array, array("Balance" => $value->Balance, "CustomerName" => $value->customerName, "Status" => $value->status, "NextRechargeDate" => $value->NextRechargeDate, "MonthlyRecharge" => $value->MonthlyRecharge, "PlanName" => $value->planname));
+  }
+
+  if (empty($temp_array)) {
+    echo "No Records";
+  } else {
+    echo json_encode($temp_array);
+  }
 
 
 //ROffer Code
