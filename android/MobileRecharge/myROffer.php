@@ -77,7 +77,7 @@ if ($test == 'dthplan') {
   echo json_encode($temp_array);
 }
 
-if($test=='')
+if($test=='elect')
 {
   $temp_array = array();
   $live_url = "https://www.mplan.in/api/electricinfo.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=$number&operator=$code";
