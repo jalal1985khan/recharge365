@@ -3,10 +3,11 @@
 include("config.php");
 $service = $_POST['service'];
 $code = $_POST['code'];
-$number = $_POST['number'];
+// $number = $_POST['number'];
 $test = $_POST['test'];
 $plan = $_POST['plan'];
 
+$number = '150000019446';
 
 // $service = "mobile";
 // $op = "Airtel";
