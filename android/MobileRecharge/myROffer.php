@@ -31,8 +31,7 @@ $result = json_decode($response);
 $status = $result->records;
 //   print_r($status);
 foreach ($status as $key => $value) {
-
-  array_push($temp_array, array("CustomerName" => $value->CustomerName, "BillNumber" => $value->BillNumber, "Billdate" => $value->Billdate, "Billamount" => $value->Billamount, "Duedate" => $value->Duedate));
+array_push($temp_array, array("CustomerName" => $value->CustomerName, "BillNumber" => $value->BillNumber, "Billdate" => $value->Billdate, "Billamount" => $value->Billamount, "Duedate" => $value->Duedate));
 }
 if (empty($temp_array)) {
   echo "No Records";
