@@ -14,11 +14,40 @@ $plan = $_POST['plan'];
 
 //ROffer Code
 
-if($test =='dthplan')
-{
+$temp_array = array();
+$live_url = "https://www.mplan.in/api/electricinfo.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=$number&operator=$plan";
+$ch = curl_init();
+// echo $live_url;
+curl_setopt($ch, CURLOPT_URL, $live_url); //Using live here
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+curl_setopt($ch, CURLOPT_HEADER, FALSE);
+curl_setopt($ch, CURLOPT_POST, TRUE);
+
+$response = curl_exec($ch);
+curl_close($ch);
+//  print_r($live_url);
+$result = json_decode($response);
+$status = $result->records;
+//   print_r($status);
+foreach ($status as $key => $value) {
+
+  array_push($temp_array, array("CustomerName" => $value->CustomerName, "BillNumber" => $value->BillNumber, "Billdate" => $value->Billdate, "Billamount" => $value->Billamount, "Duedate" => $value->Duedate));
+}
+if (empty($temp_array)) {
+  echo "No Records";
+} else {
+  echo json_encode($temp_array);
+}
+//   echo $response;
+
+
+
+
+
+if ($test == 'dthplan') {
   $temp_array = array();
   $ch = curl_init();
-  $live_url ="https://www.mplan.in/api/DthRoffer.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=$number&operator=$plan";
+  $live_url = "https://www.mplan.in/api/DthRoffer.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=$number&operator=$plan";
   curl_setopt($ch, CURLOPT_URL, $live_url); //Using live here
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
   $response = curl_exec($ch);
@@ -29,10 +58,7 @@ if($test =='dthplan')
     array_push($temp_array, array("Paisa" => $st->rs, "Data" => $st->desc));
   }
   echo json_encode($temp_array);
-}
-
-elseif($test =='dthinfo')
-{
+} elseif ($test == 'dthinfo') {
   $temp_array = array();
   $live_url = "https://www.mplan.in/api/Dthinfo.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=$number&operator=$code";
   $ch = curl_init();
@@ -53,11 +79,8 @@ elseif($test =='dthinfo')
   } else {
     echo json_encode($temp_array);
   }
-echo 'no records';
-
-}
-
-elseif($test =='prepaid'){
+  echo 'no records';
+} elseif ($test == 'prepaid') {
   $temp_array = array();
   $live_url = "https://www.mplan.in/api/plans.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=$number&operator=$code";
   $ch = curl_init();
@@ -74,12 +97,11 @@ elseif($test =='prepaid'){
     array_push($temp_array, array("Paisa" => $value->rs, "Data" => $value->desc));
   }
   echo json_encode($temp_array);
-
 }
 
 $sql = "INSERT INTO `test_rc`(`id`, `service`, `code`, `number`) VALUES ('','$plan $code','$number','$test')";
-if(mysqli_query($con,$sql)){
-echo 'ok';
+if (mysqli_query($con, $sql)) {
+  echo 'ok';
 }
 
 
