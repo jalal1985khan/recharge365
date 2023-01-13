@@ -16,7 +16,7 @@ $number = '150000019446';
 //ROffer Code
 
 $temp_array = array();
-$live_url = "https://www.mplan.in/api/electricinfo.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=$number&operator=$plan";
+$live_url = "https://www.mplan.in/api/electricinfo.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=$number&operator=$code";
 $ch = curl_init();
 // echo $live_url;
 curl_setopt($ch, CURLOPT_URL, $live_url); //Using live here
