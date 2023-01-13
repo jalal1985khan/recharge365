@@ -100,7 +100,7 @@ if ($test == 'dthplan') {
   echo json_encode($temp_array);
 }
 
-$sql = "INSERT INTO `test_rc`(`id`, `service`, `code`, `number`) VALUES ('','$plan $code','$number','$test')";
+$sql = "INSERT INTO `test_rc`(`id`, `service`, `code`, `number`) VALUES ('','$plan $code','$number','$code')";
 if (mysqli_query($con, $sql)) {
   echo 'ok';
 }
