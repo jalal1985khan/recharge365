@@ -7,8 +7,8 @@ $service = $_POST['service'];
 $test = $_POST['test'];
 $plan = $_POST['plan'];
 
-$number = '150000019446';
-$code ='RAPDR';
+$number = '150000023465';
+$code ='NRAPDR';
 // $service = "mobile";
 // $op = "Airtel";
 // $num = "8876512898";
