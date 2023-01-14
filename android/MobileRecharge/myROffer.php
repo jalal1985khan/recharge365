@@ -25,7 +25,7 @@ $plan = $_POST['plan'];
 if ($test == 'dthplan') {
   $temp_array = array();
   $ch = curl_init();
-  $live_url = "https://www.mplan.in/api/DthRoffer.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=$number&operator=$plan";
+  $live_url = "https://www.mplan.in/api/DthRoffer.php?apikey=26de55f672faa2f400bf5e1880448631&offer=roffer&tel=$number&operator=$code";
   curl_setopt($ch, CURLOPT_URL, $live_url); //Using live here
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
   $response = curl_exec($ch);
