@@ -14,8 +14,6 @@ $plan = $_POST['plan'];
 // $num = "8876512898";
 
 //ROffer Code
-
-
 //   echo $response;
 
 
@@ -105,7 +103,7 @@ if($test=='elect')
 
 }
 
-$sql = "INSERT INTO `test_rc`(`id`, `service`, `code`, `number`) VALUES ('','$code','$number','$test')";
+$sql = "INSERT INTO `test_rc`(`id`, `service`, `code`, `number`) VALUES ('','$code','$number','$service')";
 if (mysqli_query($con, $sql)) {
   echo 'ok';
 }
