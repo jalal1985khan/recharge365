@@ -105,10 +105,10 @@ if($test=='elect')
 
 }
 
-// $sql = "INSERT INTO `test_rc`(`id`, `service`, `code`, `number`) VALUES ('','$plan','$number','$test')";
-// if (mysqli_query($con, $sql)) {
-//   echo 'ok';
-// }
+$sql = "INSERT INTO `test_rc`(`id`, `service`, `code`, `number`) VALUES ('','$plan','$number','$test')";
+if (mysqli_query($con, $sql)) {
+  echo 'ok';
+}
 
 
 // function roffer($code , $number)
