@@ -2,13 +2,13 @@
 
 include("config.php");
 $service = $_POST['service'];
-// $code = $_POST['code'];
-// $number = $_POST['number'];
+$code = $_POST['code'];
+$number = $_POST['number'];
 $test = $_POST['test'];
 $plan = $_POST['plan'];
 
-$number = '150000023465';
-$code ='NRAPDR';
+// $number = '150000023465';
+// $code ='NRAPDR';
 // $service = "mobile";
 // $op = "Airtel";
 // $num = "8876512898";
